@@ -1,0 +1,58 @@
+/* Reset básico para zerar margens, paddings e outros estilos padrão */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui borda e padding na largura e altura dos elementos */
+}
+
+/* Remove estilos de lista padrão */
+ul, ol {
+    list-style: none;
+}
+
+/* Remove sublinhado de links e redefine estilo */
+a {
+    text-decoration: none;
+    color: inherit; /* Herda a cor do elemento pai */
+}   
+
+/* Definir estilos básicos para títulos e parágrafos */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    line-height: 1.25;
+}
+
+/* Garantir que imagens sejam responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Reset para botões */
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit; /* Usa a mesma fonte do body */
+}
+
+/* Input e textarea sem estilos padrão */
+input, textarea {
+    border: none;
+    outline: none;
+    font-family: inherit;
+}
+
+/* Reset para tabelas */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    padding: 8px;
+    text-align: left;
+}
