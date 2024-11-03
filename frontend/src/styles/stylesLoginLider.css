@@ -1,0 +1,132 @@
+body {
+    background-color: #FFCE56;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header img {
+    height: 100%;
+}
+
+header h1 {
+    font-size: 3vw;
+}
+
+header a {
+    background-color: #fff;
+    border: #000 1px solid;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow:
+        0px 2px 4px rgba(0, 0, 0, 0.4),
+        0px 7px 13px -3px rgba(0, 0, 0, 0.3),
+        inset 0px -3px 0px rgba(0, 0, 0, 0.5);
+}
+
+header h3 {
+    text-align: center;
+}
+
+
+.login-wrap {
+    position: relative;
+    margin: 0 auto;
+    background: #ecf0f1;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #333;
+    padding: 15px;
+
+    h2 {
+        text-align: center;
+        font-weight: 200;
+        font-size: 2em;
+        margin-top: 10px;
+        color: #34495e;
+    }
+
+    .form {
+        padding-top: 20px;
+
+        input[type="email"],
+        input[type="password"],
+        button {
+            width: 80%;
+            margin-left: 10%;
+            margin-bottom: 25px;
+            height: 40px;
+            border-radius: 5px;
+            outline: 0;
+            -moz-outline-style: none;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            border: 1px solid #bbb;
+            padding: 0 0 0 10px;
+            font-size: 14px;
+
+            &:focus {
+                border: 1px solid #3498db;
+            }
+        }
+
+        button {
+            background: #000;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 200;
+            cursor: pointer;
+            transition: box-shadow .4s ease;
+
+            &:hover {
+                box-shadow: 1px 1px 5px #555;
+            }
+
+            &:active {
+                box-shadow: 1px 1px 7px #222;
+            }
+
+        }
+
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: -webkit-linear-gradient(left,
+                #27ae60 0%, #27ae60 20%,
+                #8e44ad 20%, #8e44ad 40%,
+                #3498db 40%, #3498db 60%,
+                #e74c3c 60%, #e74c3c 80%,
+                #f1c40f 80%, #f1c40f 100%);
+        background: -moz-linear-gradient(left,
+                #27ae60 0%, #27ae60 20%,
+                #8e44ad 20%, #8e44ad 40%,
+                #3498db 40%, #3498db 60%,
+                #e74c3c 60%, #e74c3c 80%,
+                #f1c40f 80%, #f1c40f 100%);
+        height: 5px;
+        border-radius: 5px 5px 0 0;
+    }
+
+}
