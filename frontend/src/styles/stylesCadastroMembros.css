@@ -43,7 +43,7 @@ header h3 {
 }
 
 
-.login-wrap {
+.cadastro-wrap {
     position: relative;
     margin: 0 auto;
     background: #ecf0f1;
@@ -63,7 +63,7 @@ header h3 {
     .form {
         padding-top: 20px;
 
-        input[type="email"],
+        input[type="text"], input[type="endereço"], input[type="email"],
         input[type="password"],
         button {
             width: 80%;
@@ -75,8 +75,7 @@ header h3 {
             -moz-outline-style: none;
         }
 
-        input[type="email"],
-        input[type="password"] {
+        input[type="text"], input[type="endereço"], input[type="email"], input[type="password"] {
             border: 1px solid #bbb;
             padding: 0 0 0 10px;
             font-size: 14px;
