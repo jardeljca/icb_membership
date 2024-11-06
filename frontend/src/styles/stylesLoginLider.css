@@ -1,5 +1,6 @@
-:root {
-    --main-gradient: linear-gradient(42deg, rgba(17, 101, 189, 1) 50%, rgba(255, 255, 255, 1) 100%);
+:root{
+    --main-gradient: linear-gradient(0deg, rgba(255,255,255,1) 25%, rgba(17,101,189,1) 75%);
+    ;
 }
 
 body {
