@@ -1,5 +1,9 @@
+:root{
+    --main-gradient: linear-gradient(42deg, rgba(17, 101, 189, 1) 50%, rgba(255, 255, 255, 1) 100%);
+}
+
 body{
-    background-color: #FFCE56;
+    background: var(--main-gradient);
     max-width: 1024px;
     display: flex;
     flex-direction: column;
