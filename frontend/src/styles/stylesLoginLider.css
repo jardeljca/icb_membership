@@ -45,7 +45,8 @@ header h3 {
 
 .login-wrap {
     position: relative;
-    margin: 0 auto;
+    margin: auto;
+    margin-bottom: 10px;
     background: #ecf0f1;
     width: 350px;
     border-radius: 5px;
@@ -105,5 +106,26 @@ header h3 {
 
         }
 
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    
+    header h1{
+        display: none;
+    }
+
+    .login-wrap {
+        width: 80%;
+        margin-top: 50px;
+    }
+    
+
+}
+
+@media screen and (max-width: 260px){
+    body{
+        display: none;
     }
 }

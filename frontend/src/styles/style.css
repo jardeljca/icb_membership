@@ -144,6 +144,11 @@ footer{
 
 
 @media screen and (max-width: 600px){
+    
+    header h1{
+        display: none;
+    }
+
     .iconsSociais a{
         width: 50px;
     }
@@ -152,8 +157,12 @@ footer{
         width: 50px;
     }
 
-    footer h4, a{
-        font-size: 3vw;
+    .inforSociais{
+        display: none;
+    }
+
+    .direitoReservados{
+        font-size: 10px;
     }
 }
 
