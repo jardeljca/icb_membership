@@ -138,15 +138,10 @@ main {
 
     .areaMembros {
         position: absolute;
-        top: 100px;
+        top: 20vh;
         width: 100vw;
         height: 80vh;
         overflow: hidden;
-
-        nav {
-            display: flex;
-            justify-content: center;
-        }
 
         button {
             padding: 0%;
@@ -156,26 +151,14 @@ main {
             text-align: center;
             font-size: 3vw;
         }
-
-        /* .btn1{
-            position: absolute;
-            top: 50;
-        } */
     }
 
-    .areaMembros::before {
-        content: "";
+    .areaConsultas{
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url(/frontend/public/imagens/Oracao.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        opacity: 0.3;
-        z-index: -1;
+        top: 20vh;
+        width: 100vw;
+        height: 80vh;
+        overflow: hidden;
     }
 }
 
