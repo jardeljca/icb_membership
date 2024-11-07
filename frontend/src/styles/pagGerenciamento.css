@@ -1,5 +1,5 @@
-:root{
-    --main-gradient: linear-gradient(0deg, rgba(255,255,255,1) 25%, rgba(17,101,189,1) 75%);
+:root {
+    --main-gradient: linear-gradient(0deg, rgba(255, 255, 255, 1) 25%, rgba(17, 101, 189, 1) 75%);
     ;
 }
 
@@ -39,6 +39,7 @@ main {
     }
 
     section {
+        position: relative;
         width: 80vw;
         display: flex;
         flex-direction: column;
@@ -55,18 +56,63 @@ main {
     }
 }
 
+.areaMembros {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    overflow: hidden;
+
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        background-color: #fff;
+        border: #000 1px solid;
+        border-radius: 50px;
+        margin: 10px;
+        padding: 10px;
+        cursor: pointer;
+        box-shadow:
+            0px 2px 4px rgba(0, 0, 0, 0.4),
+            0px 7px 13px -3px rgba(0, 0, 0, 0.3),
+            inset 0px -3px 0px rgba(0, 0, 0, 0.5);
+        font-size: 100%;
+    }
+}
+
+.areaMembros::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/frontend/public/imagens/Oracao.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    /* Define a opacidade da imagem */
+    z-index: -1;
+    /* Mantém a imagem atrás do conteúdo */
+}
+
 @media screen and (max-width: 600px) {
-    main{
+    main {
         flex-direction: column;
 
-        nav{
+        nav {
             width: 100vw;
             height: 20vh;
             flex-direction: row;
             align-items: center;
             justify-content: center;
 
-            button{
+            button {
                 padding: 0%;
                 width: 25%;
                 height: 40%;
@@ -75,10 +121,52 @@ main {
             }
         }
 
-        section{
+        section {
             width: 100vw;
             height: 80vh;
         }
+    }
+
+    .areaMembros {
+        position: absolute;
+        top: 100px;
+        width: 100vw;
+        height: 80vh;
+        overflow: hidden;
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            padding: 0%;
+            width: 25%;
+            height: 7vw;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 3vw;
+        }
+
+        /* .btn1{
+            position: absolute;
+            top: 50;
+        } */
+    }
+
+    .areaMembros::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(/frontend/public/imagens/Oracao.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.3;
+        z-index: -1;
     }
 }
 
