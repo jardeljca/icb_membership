@@ -26,15 +26,15 @@
         <div class="login-wrap">
             <h2>Login líder</h2>
 
-            <form action="/login" method="POST"> <!-- Ajuste a URL de acordo com o seu backend -->
+            <form>
                 <div class="form">
-                    <input type="email" placeholder="Email" name="email" />
-                    <input type="password" placeholder="Senha" name="password" />
-                    <button type="submit"> Login </button>
+                    <input type="email" placeholder="Email" name="email" id="emailLogin"/>
+                    <input type="password" placeholder="Senha" name="password" id="senhaLogin"/>
+                    <button type="submit" onclick="logar(); return false"> Entrar </button>
                 </div>
             </form>
         </div>
     </main>
 </body>
-
+<script src="/frontend/src/js/loginLider.js"></script>
 </html>
