@@ -57,6 +57,7 @@ main {
 }
 
 .areaMembros {
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -96,11 +97,19 @@ main {
     background-size: cover;
     background-position: center;
     opacity: 0.3;
-    /* Define a opacidade da imagem */
     z-index: -1;
-    /* Mantém a imagem atrás do conteúdo */
 }
 
+.areaConsultas{
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    overflow: hidden;
+}
 @media screen and (max-width: 600px) {
     main {
         flex-direction: column;

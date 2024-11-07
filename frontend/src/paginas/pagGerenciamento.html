@@ -16,8 +16,8 @@
 <body>
     <main>
         <nav>
-            <button>Membros</button>
-            <button>Consultas</button>
+            <button id="btnMembros">Membros</button>
+            <button id="btnConsultas">Consultas</button>
         </nav>
         <section>
             <img src="/frontend/public/imagens/icb_logo.png" alt="Logo ICB">
@@ -25,13 +25,16 @@
             <h2>Seja bem vindo líder</h2>
         </section>
     </main>
-    <div class="areaMembros">
+    <div class="areaMembros" id="areaMembros">
         <nav>
-            <button class="btn1">Editar membro</button>
-            <button class="btn2">Cadastrar igreja</button>
-            <button class="btn3">Consultar igreja</button>
+            <button id="btn1">Editar membro</button>
+            <button id="btn2">Cadastrar igreja</button>
+            <button id="btn3">Consultar igreja</button>
         </nav>
     </div>
+    <div class="areaConsultas" id="areaConsultas">
+        <h3>futuramente será implantado uma área para consultas</h3>
+    </div>
 </body>
-
+<script src="/frontend/src/js/pagGerenciamento.js"></script>
 </html>
