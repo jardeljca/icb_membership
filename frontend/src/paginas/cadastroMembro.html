@@ -18,26 +18,58 @@
         <img src="/frontend/public/imagens/icb_logo.png" alt="Logo icb">
         <h1>Igreja casa da benção</h1>
         <a href="/index.html">
-            <h3>Voltar</h3>
+            <img src="/frontend/public/imagens/voltar.png" alt="Botão voltar">
         </a>
     </header>
     <hr>
     <main>
-        <div class="cadastro-wrap">
+        <!-- Formulario antigo -->
+        <!-- <div class="cadastro-wrap">
             <h2>Cadastro de membros</h2>
 
-            <form action="/cadastro" method="POST"> <!-- Ajuste a URL de acordo com o seu backend -->
+            <form action="/cadastro" method="POST">
                 <div class="form">
-                    <input type="text"
-                    placeholder="Nome" name="nome" />
+                    <input type="text" placeholder="Nome" name="nome" />
                     <input type="text" placeholder="Endereço" name="endereço" />
                     <input type="email" placeholder="Email" name="email" />
                     <input type="password" placeholder="Senha" name="password" />
                     <button type="submit"> Cadastrar </button>
                 </div>
             </form>
-        </div>
+        </div> -->
+    
+        <form action="">
+            <fieldset class="dadosPessoais">
+                <legend>Dados pessoais</legend>
+                <label class="caixaGde">
+                    Nome
+                    <input type="text" name="nome" placeholder="Digite seu nome completo" required />
+                </label>
+                <label class="caixaPqna">
+                    Estado civil
+                    <select name="estadoCivil" id="" required>
+                        <option></option>
+                        <option value="">Solteiro</option>
+                        <option value="">Casado</option>
+                        <option value="">Divorciado</option>
+                        <option value="">Viúvo</option>
+                    </select>
+                </label>
+                <label class="caixaPqna">
+                    Contato
+                    <input type="text" id="contato" name="contato" placeholder="(xx)xxxxx-xxxx" maxlength="11" onkeyup="formatarTelefone(this)" required>
+                </label>
+                <label>
+                    Endereço
+                    <input type="text" name="endereço" required />
+                </label>                
+            </fieldset>
+            <fieldset class="dadosEclesiarticos">
+                <legend>Dados Eclesiárticos</legend>
+            </fieldset>
+        </form>
+    
     </main>
 </body>
-
+<script src="/frontend/src/js/cadastroMembro.js"></script>
 </html>
