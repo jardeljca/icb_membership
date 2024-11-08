@@ -89,76 +89,45 @@ main img {
     margin: 30px;
 }
 
-main a {
-    width: 10%;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    outline: none !important;
-    border: .0625rem;
-    border-radius: .4rem;
-    font-weight: 600;
-    text-align: center;
-    color: black;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
-    position: relative;
-    padding: .8rem .8rem;
-    font-size: 1vw;
-    background-color: white;
-}
-
-main h3 {
-    text-align: center;
-}
-
-.iconsSociais {
-    display: flex;
-}
-
-.iconsSociais a {
-    margin: 5px;
-    width: 5vw;
-}
-
 footer {
     width: 100vw;
     background-color: #000;
     color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
 
-.inforEnd {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
+    .inforEnd {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        
+        .inforEndMapa {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0px;
+    
+            a{
+                width: 5vw;
+            }
+        }
+        
+        .iconsSociais {
+            display: flex;
+            flex-direction: row;
 
-.inforEnd img {
-    width: 5vw;
-}
+            a {
+                margin: 5px;
+                width: 4vw;
+            }
+        }
+    }
 
-.inforEndMapa {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0px;
-
-}
-
-.inforSociais {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0px;
+    .direitoReservados{
+        margin-top: 30px;
+        font-size: 1vw;
+        text-align: center;
+    }
 }
 
 
@@ -174,20 +143,35 @@ footer {
         font-size: clamp(10px, 4vw, 15px);
     }
 
-    .iconsSociais a {
-        width: 50px;
-    }
+    footer{
+       .inforEnd{
+        display: flex;
+        flex-wrap: wrap;
 
-    .inforEnd img {
-        width: 50px;    
-    }
+        .inforEndMapa{
 
-    .inforSociais {
-        display: none;
-    }
+            a{
+                width: 10vw;
+            }
 
-    .direitoReservados {
-        font-size: 10px;
+            h4{
+                font-size: 3vw;
+                margin-top: 5px;
+            }
+        }
+
+        .iconsSociais{
+            a{
+                width: 10vw;
+            }
+        }
+
+       }
+
+       .direitoReservados{
+        font-size: 4vw;
+        margin-bottom: 5px;
+       }
     }
 }
 
