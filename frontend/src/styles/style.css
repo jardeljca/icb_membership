@@ -1,21 +1,21 @@
-:root{
-    --main-gradient: linear-gradient(0deg, rgba(255,255,255,1) 25%, rgba(17,101,189,1) 75%);
+:root {
+    --main-gradient: linear-gradient(0deg, rgba(255, 255, 255, 1) 25%, rgba(17, 101, 189, 1) 75%);
     ;
 }
 
-body{
+body {
     background: var(--main-gradient);
     max-width: 1024px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto; 
+    margin: auto;
     font-family: sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-header{
+header {
     width: 100vw;
     height: 20vh;
     display: flex;
@@ -23,48 +23,40 @@ header{
     align-items: center;
 }
 
-header img{
+header img {
     height: 100%;
 }
 
-header h1{
+header h1 {
     font-size: 3vw;
     font-style: "Source Sans Pro";
 }
 
-header a{
+header a {
     width: 10%;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    outline: none !important;
     border: .0625rem;
     border-radius: .4rem;
     font-weight: 600;
     text-align: center;
     color: black;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
-    position: relative;
     padding: .8rem .8rem;
     font-size: 1vw;
     background-color: white;
 }
 
-header h3{
+header h3 {
     text-align: center;
 }
 
-hr{
+hr {
     width: 90vw;
     background-color: #000;
 }
 
-main{
+main {
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -72,11 +64,11 @@ main{
     margin: 20px;
 }
 
-main h2{
+main h2 {
     margin-top: 30px;
 }
 
-.corpoMain{
+.corpoMain {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -84,11 +76,11 @@ main h2{
     margin: 20px;
 }
 
-main img{
+main img {
     width: 280px;
 }
 
-.corpoMainText{
+.corpoMainText {
     height: 200px;
     display: flex;
     justify-content: space-evenly;
@@ -97,7 +89,7 @@ main img{
     margin: 30px;
 }
 
-main a{
+main a {
     width: 10%;
     display: flex;
     -webkit-box-pack: center;
@@ -120,20 +112,20 @@ main a{
     background-color: white;
 }
 
-main h3{
+main h3 {
     text-align: center;
 }
 
-.iconsSociais{
+.iconsSociais {
     display: flex;
 }
 
-.iconsSociais a{
+.iconsSociais a {
     margin: 5px;
     width: 5vw;
 }
 
-footer{
+footer {
     width: 100vw;
     background-color: #000;
     color: #fff;
@@ -143,17 +135,17 @@ footer{
     align-items: center;
 }
 
-.inforEnd{
+.inforEnd {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
 }
 
-.inforEnd img{
+.inforEnd img {
     width: 5vw;
 }
 
-.inforEndMapa{
+.inforEndMapa {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -162,7 +154,7 @@ footer{
 
 }
 
-.inforSociais{
+.inforSociais {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -170,31 +162,37 @@ footer{
 }
 
 
-@media screen and (max-width: 600px){
-    
-    header h1{
+@media screen and (max-width: 600px) {
+
+    header h1 {
         display: none;
     }
 
-    .iconsSociais a{
+    header a {
+        width: 35vw;
+        height: 40px;
+        font-size: clamp(10px, 4vw, 15px);
+    }
+
+    .iconsSociais a {
         width: 50px;
     }
 
-    .inforEnd img{
-        width: 50px;
+    .inforEnd img {
+        width: 50px;    
     }
 
-    .inforSociais{
+    .inforSociais {
         display: none;
     }
 
-    .direitoReservados{
+    .direitoReservados {
         font-size: 10px;
     }
 }
 
-@media screen and (max-width: 260px){
-    body{
+@media screen and (max-width: 260px) {
+    body {
         display: none;
     }
 }
