@@ -1,5 +1,5 @@
-:root{
-    --main-gradient: linear-gradient(0deg, rgba(255,255,255,1) 25%, rgba(17,101,189,1) 75%);
+:root {
+    --main-gradient: linear-gradient(0deg, rgba(255, 255, 255, 1) 25%, rgba(17, 101, 189, 1) 75%);
     ;
 }
 
@@ -25,7 +25,8 @@ header {
 
     img {
         height: 100%;
-        filter: invert(1); /* Inverte a cor */
+        filter: invert(1);
+        /* Inverte a cor */
     }
 
     h1 {
@@ -40,124 +41,118 @@ header {
     }
 }
 
-hr{
+hr {
     width: 90%;
     background-color: #000;
-    
+
 }
 
-/* Estilo do formulário antigo */
-/* .cadastro-wrap {
-    position: relative;
-    margin: auto;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    background: #ecf0f1;
-    width: 350px;
-    border-radius: 5px;
-    box-shadow: 3px 3px 10px #333;
-    padding: 15px;
-
-    h2 {
-        text-align: center;
-        font-weight: 200;
-        font-size: 2em;
-        margin-top: 10px;
-        color: #000;
-    }
-
-    .form {
-        padding-top: 20px;
-
-        input[type="text"], input[type="endereço"], input[type="email"],
-        input[type="password"],
-        button {
-            width: 80%;
-            margin-left: 10%;
-            margin-bottom: 25px;
-            height: 40px;
-            border-radius: 5px;
-            outline: 0;
-            -moz-outline-style: none;
-        }
-
-        input[type="text"], input[type="endereço"], input[type="email"], input[type="password"] {
-            border: 1px solid #bbb;
-            padding: 0 0 0 10px;
-            font-size: 14px;
-
-            &:focus {
-                border: 1px solid #3498db;
-            }
-        }
-
-        button {
-            background: #000;
-            border: none;
-            color: white;
-            font-size: 18px;
-            font-weight: 200;
-            cursor: pointer;
-            transition: box-shadow .4s ease;
-
-            &:hover {
-                box-shadow: 1px 1px 5px #555;
-            }
-
-            &:active {
-                box-shadow: 1px 1px 7px #222;
-            }
-
-        }
-
-    }
-} */
-
-form{
+form {
     display: flex;
     flex-direction: column;
     width: 80vw;
     background-color: #ECF0F1;
     padding: 10px;
-    margin-top: 15px;
+    margin-top: 50px;
 
-    .dadosPessoais{
+    h2 {
+        font-size: 2vw;
+        color: #000;
+        text-align: center;
+    }
+
+    .dadosPessoais,
+    .dadosEclesiarticos {
         display: flex;
         flex-wrap: wrap;
         border: none;
+        margin-top: 20px;
 
-        label{
+
+        label {
             display: flex;
             flex-direction: column;
             margin: 5px;
+            text-align: center;
 
-            input{
+            input {
                 height: 20px;
+                border: solid 1px #000;
             }
         }
 
-        .caixaGde{
+        .caixaGde {
             width: 50%;
         }
 
-        .caixaPqna{
+        .caixaPqna {
             width: 15%;
         }
-        
+
+        .batismoAguas {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .radio {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin: 5px;
+
+                input {
+                    margin: 0 5px;
+                }
+            }
+
+            #campoData {
+                display: none;
+            }
+
+        }
+
+        .cargoIgreja {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .radio {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin: 5px;
+
+                input {
+                    margin: 0 5px;
+                }
+            }
+
+            #campoCargo {
+                display: none;
+            }
+        }
     }
 
-    .dadosEclesiarticos{
-        display: flex;
-        flex-wrap: wrap;
-        border: none;
+    .dadosEclesiarticos {
+        justify-content: center;
+    }
+
+    legend {
+        font-size: 1.5vw;
+        color: #000;
+        text-align: center;
     }
 }
 
 
+/* ######################################################## */
+@media screen and (max-width: 600px) {
 
-@media screen and (max-width: 600px){
-    
-    header h1{
+    header h1 {
         display: none;
     }
 
@@ -165,12 +160,12 @@ form{
         width: 80%;
         margin-top: 50px
     }
-    
+
 
 }
 
-@media screen and (max-width: 260px){
-    body{
+@media screen and (max-width: 260px) {
+    body {
         display: none;
     }
 }

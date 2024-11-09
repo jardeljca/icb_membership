@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/stylesCadastroMembros.css">
-    <link rel="stylesheet" href="../src/styles/reset.css">
+    <link rel="stylesheet" href="/frontend/src/styles/stylesCadastroMembros.css">
+    <link rel="stylesheet" href="/frontend/src/styles/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -23,35 +23,22 @@
     </header>
     <hr>
     <main>
-        <!-- Formulario antigo -->
-        <!-- <div class="cadastro-wrap">
-            <h2>Cadastro de membros</h2>
 
-            <form action="/cadastro" method="POST">
-                <div class="form">
-                    <input type="text" placeholder="Nome" name="nome" />
-                    <input type="text" placeholder="Endereço" name="endereço" />
-                    <input type="email" placeholder="Email" name="email" />
-                    <input type="password" placeholder="Senha" name="password" />
-                    <button type="submit"> Cadastrar </button>
-                </div>
-            </form>
-        </div> -->
-    
         <form action="">
+            <h2>Cadastro de membros</h2>
             <fieldset class="dadosPessoais">
                 <legend>Dados pessoais</legend>
                 <label class="caixaGde">
                     Nome
-                    <input type="text" name="nome" placeholder="Digite seu nome completo" required />
+                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" required />
                 </label>
-                <label class="caixaPqna>
+                <label class="caixaPqna">
                     Data de nascimento
-                    <input type="date">
+                    <input type="date" name="dataNascimento" required>
                 </label>
                 <label class="caixaPqna">
                     Estado civil
-                    <select name="estadoCivil" id="" required>
+                    <select name="estadoCivil" required>
                         <option></option>
                         <option value="">Solteiro</option>
                         <option value="">Casado</option>
@@ -61,7 +48,8 @@
                 </label>
                 <label class="caixaPqna">
                     Contato
-                    <input type="text" id="contato" name="contato" placeholder="(xx)xxxxx-xxxx" maxlength="11" onkeyup="formatarTelefone(this)" required>
+                    <input type="text" id="contato" name="contato" placeholder="(xx)xxxxx-xxxx" maxlength="11"
+                        onkeyup="formatarTelefone(this)" required>
                 </label>
                 <label class="caixaPqna">
                     Escolaridade
@@ -77,11 +65,12 @@
                 </label>
                 <label class="caixaPqna">
                     Instagran
-                    <input type="url" placeholder="Link para Instagran">
-                </label>     
+                    <input type="url" placeholder="Link para Instagran" name="Instagran">
+                </label>
                 <label class="caixaPqna">
                     Digite o cep
-                    <input type="text" id="cep" name="cep" placeholder="Apenas números" maxlength="8" required onblur="buscaCep(this.value)" />
+                    <input type="text" id="cep" name="cep" placeholder="Apenas números" maxlength="8" required
+                        onblur="buscaCep(this.value)" />
                 </label>
                 <label class="caixaGde">
                     Logradouro
@@ -135,10 +124,41 @@
             </fieldset>
             <fieldset class="dadosEclesiarticos">
                 <legend>Dados Eclesiárticos</legend>
+
+                <label class="caixaPqna">
+                    Data da conversão
+                    <input type="date" name="dataConversao" required>
+                </label>
+                <label class="caixaPqna">
+                    Batismo nas águas?
+                    <div class="batismoAguas">
+                        <div class="radio">
+                            <input type="radio" name="batismo" value="sim" required onclick="mostrarData()">Sim
+                            <input type="radio" name="batismo" value="nao" required onclick="esconderData()">Não
+                        </div>
+                        <div id="campoData">
+                            <input type="date" name="dataBatismo" id="dataBatismo" class="dataBatismo"
+                                placeholder="Data do batismo">
+                        </div>
+                    </div>
+                </label>
+                <label class="caixaPqna">
+                    Possui cargos na igreja?
+                    <div class="cargoIgreja">
+                        <div class="radio">
+                            <input type="radio" name="cargo" value="sim" required onclick="mostrarAreaTexto()" >Sim
+                            <input type="radio" name="cargo" value="nao" required onclick="esconderAreaTexto()" >Não
+                        </div>
+                        <div id="campoCargo">
+                            <input type="text" name="tipoCargo" id="tipoCargo" class="tipoCargo" placeholder="Qual cargo?">
+                        </div>
+                    </div>
+                </label>
             </fieldset>
         </form>
-    
+
     </main>
 </body>
 <script src="/frontend/src/js/cadastroMembro.js"></script>
+
 </html>

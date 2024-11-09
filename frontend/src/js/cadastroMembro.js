@@ -40,3 +40,29 @@ function buscaCep(cep) {
         alert("O cep precisa ter 8 digitos")
     }
 }
+
+/* Funções para mostrar ou esconder campo input data de batismo de acordo com a seleção da caixa */
+
+function mostrarData() {
+    const campoData = document.getElementById("campoData");campoData.style.display = "block";
+}
+
+function esconderData() {
+    const campoData = document.getElementById("campoData");campoData.style.display = "none";
+    const dataBatismo = document.getElementById("dataBatismo");
+    dataBatismo.value = "";
+}
+
+//Funções para mostrar ou esconder campo input caixa de cargo de acordo com a seleção da caixa
+
+function mostrarAreaTexto() {
+    const campoCargo = document.getElementById("campoCargo");
+    campoCargo.style.display = "block";
+}
+
+function esconderAreaTexto() {
+    const campoCargo = document.getElementById("campoCargo");
+    campoCargo.style.display = "none";
+    const tipoCargo = document.getElementById("tipoCargo");
+    tipoCargo.value = "";
+}
