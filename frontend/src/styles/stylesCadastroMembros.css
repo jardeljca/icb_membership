@@ -26,7 +26,6 @@ header {
     img {
         height: 100%;
         filter: invert(1);
-        /* Inverte a cor */
     }
 
     h1 {
@@ -146,22 +145,83 @@ form {
         color: #000;
         text-align: center;
     }
+
 }
 
+@media screen and (max-width: 800px) {
 
-/* ######################################################## */
+}
 @media screen and (max-width: 600px) {
+
+    body{
+        height: auto;
+
+        header{
+            h1{
+                display: none;
+            }
+
+            a{
+                img{
+                    width: 10vw;
+                }  
+            }
+        }
+
+        form{
+
+            margin-bottom: 50px;
+
+            h2 {
+                font-size: 20px;
+            }
+    
+            .dadosPessoais, .dadosEclesiarticos {
+                .caixaGde {
+                    width: 100%;
+                }
+        
+                .caixaPqna {
+                    width: 45%;
+                }
+            }
+    
+            legend {
+                font-size: 15px;
+            }
+        }
+
+    }
+    
+
+
+}
+/* ######################################################## */
+@media screen and (max-width: 400px) {
 
     header h1 {
         display: none;
     }
 
-    .cadastro-wrap {
-        width: 80%;
-        margin-top: 50px
+    form{
+        h2 {
+            font-size: 20px;
+        }
+
+        .dadosPessoais, .dadosEclesiarticos {
+            .caixaGde {
+                width: 100%;
+            }
+    
+            .caixaPqna {
+                width: 100%;
+            }
+        }
+
+        legend {
+            font-size: 15px;
+        }
     }
-
-
 }
 
 @media screen and (max-width: 260px) {

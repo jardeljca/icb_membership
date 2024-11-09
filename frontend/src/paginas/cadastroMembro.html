@@ -23,7 +23,6 @@
     </header>
     <hr>
     <main>
-
         <form action="">
             <h2>Cadastro de membros</h2>
             <fieldset class="dadosPessoais">
@@ -143,20 +142,21 @@
                     </div>
                 </label>
                 <label class="caixaPqna">
-                    Possui cargos na igreja?
+                    Possui cargos?
                     <div class="cargoIgreja">
                         <div class="radio">
-                            <input type="radio" name="cargo" value="sim" required onclick="mostrarAreaTexto()" >Sim
-                            <input type="radio" name="cargo" value="nao" required onclick="esconderAreaTexto()" >Não
+                            <input type="radio" name="cargo" value="sim" required onclick="mostrarAreaTexto()">Sim
+                            <input type="radio" name="cargo" value="nao" required onclick="esconderAreaTexto()">Não
                         </div>
                         <div id="campoCargo">
-                            <input type="text" name="tipoCargo" id="tipoCargo" class="tipoCargo" placeholder="Qual cargo?">
+                            <input type="text" name="tipoCargo" id="tipoCargo" class="tipoCargo"
+                                placeholder="Qual cargo?">
                         </div>
                     </div>
                 </label>
             </fieldset>
+            <button type="submit" class="botaoEnviar">Enviar</button>
         </form>
-
     </main>
 </body>
 <script src="/frontend/src/js/cadastroMembro.js"></script>
