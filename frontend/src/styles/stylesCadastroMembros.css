@@ -118,6 +118,8 @@ form{
     flex-direction: column;
     width: 80vw;
     background-color: #ECF0F1;
+    padding: 10px;
+    margin-top: 15px;
 
     .dadosPessoais{
         display: flex;
@@ -128,14 +130,18 @@ form{
             display: flex;
             flex-direction: column;
             margin: 5px;
+
+            input{
+                height: 20px;
+            }
         }
 
         .caixaGde{
-            width: 100%;
+            width: 50%;
         }
 
         .caixaPqna{
-            width: 40%;
+            width: 15%;
         }
         
     }

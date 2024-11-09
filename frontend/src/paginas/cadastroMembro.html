@@ -45,6 +45,10 @@
                     Nome
                     <input type="text" name="nome" placeholder="Digite seu nome completo" required />
                 </label>
+                <label class="caixaPqna>
+                    Data de nascimento
+                    <input type="date">
+                </label>
                 <label class="caixaPqna">
                     Estado civil
                     <select name="estadoCivil" id="" required>
@@ -59,10 +63,75 @@
                     Contato
                     <input type="text" id="contato" name="contato" placeholder="(xx)xxxxx-xxxx" maxlength="11" onkeyup="formatarTelefone(this)" required>
                 </label>
-                <label>
-                    Endereço
-                    <input type="text" name="endereço" required />
-                </label>                
+                <label class="caixaPqna">
+                    Escolaridade
+                    <select name="escolaridade" id="" required>
+                        <option></option>
+                        <option value="">Fundamental Incompleto</option>
+                        <option value="">Fundamental Completo</option>
+                        <option value="">Médio Incompleto</option>
+                        <option value="">Médio Completo</option>
+                        <option value="">Superior Incompleto</option>
+                        <option value="">Superior Completo</option>
+                    </select>
+                </label>
+                <label class="caixaPqna">
+                    Instagran
+                    <input type="url" placeholder="Link para Instagran">
+                </label>     
+                <label class="caixaPqna">
+                    Digite o cep
+                    <input type="text" id="cep" name="cep" placeholder="Apenas números" maxlength="8" required onblur="buscaCep(this.value)" />
+                </label>
+                <label class="caixaGde">
+                    Logradouro
+                    <input type="text" id="logradouro" name="Logradouro" placeholder="Endereço">
+                </label>
+                <label class="caixaPqna">
+                    Número
+                    <input type="number" id="numero" name="numero" placeholder="Casa">
+                </label>
+                <label class="caixaPqna">
+                    Bairro
+                    <input type="text" id="bairro" name="bairro">
+                </label>
+                <label class="caixaPqna">
+                    Cidade
+                    <input type="text" id="cidade" name="cidade">
+                </label>
+                <label class="caixaPqna">
+                    Estado
+                    <select id="estado" name="estado">
+                        <option disabled selected>Selecione o estado</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                </label>
             </fieldset>
             <fieldset class="dadosEclesiarticos">
                 <legend>Dados Eclesiárticos</legend>
