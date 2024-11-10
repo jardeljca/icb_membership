@@ -6,7 +6,7 @@
 body {
     background: var(--main-gradient);
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,13 +46,22 @@ hr {
 
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
 form {
     display: flex;
     flex-direction: column;
     width: 80vw;
     background-color: #ECF0F1;
     padding: 10px;
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
     h2 {
         font-size: 2vw;
@@ -66,6 +75,7 @@ form {
         flex-wrap: wrap;
         border: none;
         margin-top: 20px;
+        font-size: 1.3vw;
 
 
         label {
@@ -81,11 +91,11 @@ form {
         }
 
         .caixaGde {
-            width: 50%;
+            width: 60%;
         }
 
         .caixaPqna {
-            width: 15%;
+            width: 20%;
         }
 
         .batismoAguas {
@@ -137,7 +147,7 @@ form {
     }
 
     .dadosEclesiarticos {
-        justify-content: center;
+        justify-content: space-evenly;
     }
 
     legend {
@@ -146,56 +156,86 @@ form {
         text-align: center;
     }
 
+    button {
+        background: #000;
+        margin: auto;
+        border: none;
+        color: white;
+        font-size: 18px;
+        font-weight: 200;
+        cursor: pointer;
+        transition: box-shadow .4s ease;
+        width: 200px;
+        height: 30px;
+        margin-top: 50px;
+
+        &:hover {
+            box-shadow: 1px 1px 5px #555;
+        }
+
+        &:active {
+            box-shadow: 1px 1px 7px #222;
+        }
+    }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 601px) and (max-width: 900px) {
 
+    form{
+        h2{
+            
+        }
+    }
+    
 }
+
 @media screen and (max-width: 600px) {
 
-    body{
+    body {
         height: auto;
 
-        header{
-            h1{
+        header {
+            h1 {
                 display: none;
             }
 
-            a{
-                img{
+            a {
+                img {
                     width: 10vw;
-                }  
+                }
             }
         }
 
-        form{
+        form {
 
             margin-bottom: 50px;
 
             h2 {
                 font-size: 20px;
             }
-    
-            .dadosPessoais, .dadosEclesiarticos {
+
+            .dadosPessoais,
+            .dadosEclesiarticos {
                 .caixaGde {
                     width: 100%;
                 }
-        
+
                 .caixaPqna {
                     width: 45%;
                 }
             }
-    
+
             legend {
                 font-size: 15px;
             }
         }
 
     }
-    
+
 
 
 }
+
 /* ######################################################## */
 @media screen and (max-width: 400px) {
 
@@ -203,16 +243,17 @@ form {
         display: none;
     }
 
-    form{
+    form {
         h2 {
             font-size: 20px;
         }
 
-        .dadosPessoais, .dadosEclesiarticos {
+        .dadosPessoais,
+        .dadosEclesiarticos {
             .caixaGde {
                 width: 100%;
             }
-    
+
             .caixaPqna {
                 width: 100%;
             }
