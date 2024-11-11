@@ -14,182 +14,188 @@ body {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
-}
 
-header {
-    width: 100vw;
-    height: 20vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 
-    img {
-        height: 100%;
-        filter: invert(1);
-    }
-
-    h1 {
-        font-size: 3vw;
-        color: #fff;
-    }
-
-    a {
-        img {
-            width: 4vw;
-        }
-    }
-}
-
-hr {
-    width: 90%;
-    background-color: #000;
-
-}
-
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-form {
-    display: flex;
-    flex-direction: column;
-    width: 80vw;
-    background-color: #ECF0F1;
-    padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-    h2 {
-        font-size: 2vw;
-        color: #000;
-        text-align: center;
-    }
-
-    .dadosPessoais,
-    .dadosEclesiarticos {
+    header {
+        width: 100vw;
+        height: 20vh;
         display: flex;
-        flex-wrap: wrap;
-        border: none;
+        justify-content: space-around;
+        align-items: center;
+
+        img {
+            height: 100%;
+            filter: invert(1);
+        }
+
+        h1 {
+            font-size: 3vw;
+            color: #fff;
+        }
+
+        a {
+            img {
+                width: 4vw;
+            }
+        }
+    }
+
+    hr {
+        width: 90%;
+        background-color: #000;
+
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        background-color: #ECF0F1;
+        padding: 10px;
         margin-top: 20px;
-        font-size: 1.3vw;
+        margin-bottom: 20px;
 
-
-        label {
-            display: flex;
-            flex-direction: column;
-            margin: 5px;
+        h2 {
+            font-size: 2vw;
+            color: #000;
             text-align: center;
-
-            input {
-                height: 20px;
-                border: solid 1px #000;
-            }
         }
 
-        .caixaGde {
-            width: 60%;
-        }
-
-        .caixaPqna {
-            width: 20%;
-        }
-
-        .batismoAguas {
+        .dadosPessoais,
+        .dadosEclesiarticos {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            flex-wrap: wrap;
+            border: none;
+            margin-top: 20px;
+            font-size: 1.3vw;
 
-            .radio {
+
+            label {
                 display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
+                flex-direction: column;
                 margin: 5px;
+                text-align: center;
+
 
                 input {
-                    margin: 0 5px;
+                    height: 20px;
+                    border: solid 1px #000;
                 }
             }
 
-            #campoData {
-                display: none;
+            .caixaGde {
+                width: 60%;
             }
 
-        }
+            .caixaPqna {
+                width: 20%;
+            }
 
-        .cargoIgreja {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            .radio {
+            .batismoAguas {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                margin: 5px;
 
-                input {
-                    margin: 0 5px;
+                .radio {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 5px;
+
+                    input {
+                        margin: 0 5px;
+                    }
+                }
+
+                #campoData {
+                    display: none;
+                }
+
+            }
+
+            .cargoIgreja {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .radio {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 5px;
+
+                    input {
+                        margin: 0 5px;
+                    }
+                }
+
+                #campoCargo {
+                    display: none;
                 }
             }
+        }
 
-            #campoCargo {
-                display: none;
+        .dadosEclesiarticos {
+            justify-content: space-evenly;
+        }
+
+        legend {
+            font-size: 1.5vw;
+            color: #000;
+            text-align: center;
+        }
+
+        button {
+            background: #000;
+            margin: auto;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 200;
+            cursor: pointer;
+            transition: box-shadow .4s ease;
+            width: 200px;
+            height: 30px;
+            margin-top: 50px;
+
+            &:hover {
+                box-shadow: 1px 1px 5px #555;
             }
-        }
-    }
 
-    .dadosEclesiarticos {
-        justify-content: space-evenly;
-    }
-
-    legend {
-        font-size: 1.5vw;
-        color: #000;
-        text-align: center;
-    }
-
-    button {
-        background: #000;
-        margin: auto;
-        border: none;
-        color: white;
-        font-size: 18px;
-        font-weight: 200;
-        cursor: pointer;
-        transition: box-shadow .4s ease;
-        width: 200px;
-        height: 30px;
-        margin-top: 50px;
-
-        &:hover {
-            box-shadow: 1px 1px 5px #555;
-        }
-
-        &:active {
-            box-shadow: 1px 1px 7px #222;
+            &:active {
+                box-shadow: 1px 1px 7px #222;
+            }
         }
     }
 }
+
 
 @media screen and (min-width: 601px) and (max-width: 900px) {
 
-    form{
-        h2{
-            
+    form {
+        header {
+            h1 {
+                font-size: 5vw;
+            }
         }
     }
-    
+
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 401px) and (max-width: 600px) {
 
     body {
         height: auto;
@@ -208,7 +214,7 @@ form {
 
         form {
 
-            margin-bottom: 50px;
+            margin-bottom: 30px;
 
             h2 {
                 font-size: 20px;
@@ -216,6 +222,10 @@ form {
 
             .dadosPessoais,
             .dadosEclesiarticos {
+                label {
+                    font-size: 13px;
+                }
+
                 .caixaGde {
                     width: 100%;
                 }
@@ -223,47 +233,70 @@ form {
                 .caixaPqna {
                     width: 45%;
                 }
+
+                .dataConversao {
+                    width: 60%;
+                }
             }
 
             legend {
                 font-size: 15px;
             }
         }
-
     }
-
-
-
 }
 
-/* ######################################################## */
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 261px) and (max-width: 400px) {
 
-    header h1 {
-        display: none;
-    }
+    body {
 
-    form {
-        h2 {
-            font-size: 20px;
-        }
+        header {
 
-        .dadosPessoais,
-        .dadosEclesiarticos {
-            .caixaGde {
-                width: 100%;
+            h1 {
+                display: none;
             }
 
-            .caixaPqna {
-                width: 100%;
+            a {
+                img {
+                    width: 10vw;
+                }
             }
         }
 
-        legend {
-            font-size: 15px;
+        form {
+            h2 {
+                font-size: 20px;
+            }
+
+            .dadosPessoais,
+            .dadosEclesiarticos {
+
+                label{
+                    font-size: 13px;
+                }
+
+                .caixaGde {
+                    width: 100%;
+                }
+
+                .caixaPqna {
+                    width: 100%;
+                }
+            }
+
+            legend {
+                font-size: 15px;
+            }
+
+            button {
+                width: 30vw;
+                height: 20px;
+                font-size: 12px;
+            }
         }
     }
 }
+
 
 @media screen and (max-width: 260px) {
     body {
