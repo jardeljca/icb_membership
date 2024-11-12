@@ -26,7 +26,7 @@ main {
         button {
             background-color: #fff;
             border: #000 1px solid;
-            border-radius: 50px;
+            border-radius: .4rem;
             margin: 10px;
             padding: 10px;
             cursor: pointer;
@@ -57,7 +57,9 @@ main {
 }
 
 .areaMembros {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 0;
     right: 0;
@@ -65,23 +67,95 @@ main {
     height: 100vh;
     overflow: hidden;
 
-    nav {
+    .abaMembros {
         display: flex;
-        justify-content: center;
-    }
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 95%;
+        height: 95%;
 
-    button {
-        background-color: #fff;
-        border: #000 1px solid;
-        border-radius: 50px;
-        margin: 10px;
-        padding: 10px;
-        cursor: pointer;
-        box-shadow:
-            0px 2px 4px rgba(0, 0, 0, 0.4),
-            0px 7px 13px -3px rgba(0, 0, 0, 0.3),
-            inset 0px -3px 0px rgba(0, 0, 0, 0.5);
-        font-size: 100%;
+        h2 {
+            color: #fff;
+        }
+
+        a {
+            background-color: #fff;
+            border: #000 1px solid;
+            border-radius: .4rem;
+            margin: 10px;
+            padding: 10px;
+            cursor: pointer;
+            box-shadow:
+                0px 2px 4px rgba(0, 0, 0, 0.4),
+                0px 7px 13px -3px rgba(0, 0, 0, 0.3),
+                inset 0px -3px 0px rgba(0, 0, 0, 0.5);
+            font-size: 100%;
+        }
+
+        .paginacao{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+        
+            button {
+                background-color: #fff;
+                border: #000 1px solid;
+                border-radius: .4rem;
+                margin: 3px;
+                padding: 5px;
+                cursor: pointer;
+                box-shadow:
+                    0px 2px 4px rgba(0, 0, 0, 0.4),
+                    0px 7px 13px -3px rgba(0, 0, 0, 0.3),
+                    inset 0px -3px 0px rgba(0, 0, 0, 0.5);
+                font-size: 100%;
+            }
+        }
+
+        table{
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            border: none;
+            
+
+            thead{
+                height: 30px;
+            
+                .nome{
+                    width: 60%;
+                }
+
+                .acoes{
+                    width: 40%;
+                }
+            
+            }
+
+            tbody{
+                height: 25px;
+            }
+
+            th{
+                background-color: #000;
+                border: none;
+            }
+
+            td{
+                background-color: #000;
+                justify-content: center;
+
+                
+                button{
+                    background-color: #fff;
+                    height: 90%;
+                    width: 30%;
+                    font-size: 90%;
+                }
+            }
+        }
     }
 }
 
@@ -100,9 +174,8 @@ main {
     z-index: -1;
 }
 
-.areaConsultas{
-    display: none;
-    background-color: #fff;
+.areaConsultas {
+    display: flex;
     position: absolute;
     top: 0;
     right: 0;
@@ -110,6 +183,22 @@ main {
     height: 100vh;
     overflow: hidden;
 }
+
+.areaConsultas::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/frontend/public/imagens/Oracao.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -1;
+}
+
 @media screen and (max-width: 600px) {
     main {
         flex-direction: column;
@@ -153,7 +242,7 @@ main {
         }
     }
 
-    .areaConsultas{
+    .areaConsultas {
         position: absolute;
         top: 20vh;
         width: 100vw;

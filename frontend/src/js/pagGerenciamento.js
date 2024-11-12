@@ -4,17 +4,22 @@ const btnConsultas = document.getElementById("btnConsultas");
 /* Divs */
 const areaMembros = document.getElementById("areaMembros");
 const areaConsultas = document.getElementById("areaConsultas");
+const logoIcb = document.getElementById("logoIcb");
+
+areaMembros.style.display = 'none';
+areaConsultas.style.display = 'none';
 
 btnMembros.addEventListener("click", () => {
-    areaMembros.style.display = 'block';
-    if(areaConsultas.style.display === 'block'){
+    areaMembros.style.display = 'flex';
+    if(areaConsultas.style.display === 'flex'){
         areaConsultas.style.display = 'none';
     }
+    logoIcb.style.display = 'none';
 })
 
 btnConsultas.addEventListener("click", () => {
-    areaConsultas.style.display = 'block';
-    if(areaMembros.style.display === 'block'){
+    areaConsultas.style.display = 'flex';
+    if(areaMembros.style.display === 'flex'){
         areaMembros.style.display = 'none';
     }
 })  

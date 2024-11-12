@@ -19,18 +19,38 @@
             <button id="btnMembros">Membros</button>
             <button id="btnConsultas">Igrejas</button>
         </nav>
-        <section>
-            <img src="/frontend/public/imagens/icb_logo.png" alt="Logo ICB">
+        <section id="logoIcb">
+            <img src="/frontend/public/imagens/icb_logo.png"  alt="Logo ICB">
             <h1>ICB MEMBERSHIP</h1>
-            <h2>Seja bem vindo líder</h2>
         </section>
     </main>
     <div class="areaMembros" id="areaMembros">
-        <nav>
-            <button id="btn1">Editar membro</button>
-            <button id="btn2">Cadastrar igreja</button>
-            <button id="btn3">Consultar igreja</button>
-        </nav>
+        <div class="abaMembros">
+            <h2>Gerenciamento de membros</h2>
+            <a href="./cadastroMembro.html" type="button">Adicionar membro</a>
+            <div class="paginacao">
+                <button id="btnAnterior">Anterior</button>
+                <button id="btnProximo">Próximo</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="nome">Nome</th>
+                        <th class="acoes">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaMembros">
+                    <tr>
+                        <td>Nome do membro</td>
+                        <td>
+                            <button>Ver</button>
+                            <button>Editar</button>
+                            <button>Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>    
+            </table>
+        </div>
     </div>
     <div class="areaConsultas" id="areaConsultas">
         <h3>futuramente será implantado uma área para consultas</h3>
