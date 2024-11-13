@@ -15,26 +15,43 @@ main {
     display: flex;
 
     nav {
+
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: space-between;
+        align-items: center;
         width: 20vw;
         height: 100vh;
         background-color: #000;
         padding: 10px;
 
-        button {
-            background-color: #fff;
-            border: #000 1px solid;
-            border-radius: .4rem;
-            margin: 10px;
-            padding: 10px;
-            cursor: pointer;
-            box-shadow:
-                0px 2px 4px rgba(0, 0, 0, 0.4),
-                0px 7px 13px -3px rgba(0, 0, 0, 0.3),
-                inset 0px -3px 0px rgba(0, 0, 0, 0.5);
-            font-size: 100%;
+        .botoes {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 100%;
+
+            button {
+                background-color: #fff;
+                border: #000 1px solid;
+                border-radius: .4rem;
+                margin: 10px;
+                padding: 10px;
+                cursor: pointer;
+                box-shadow:
+                    0px 2px 4px rgba(0, 0, 0, 0.4),
+                    0px 7px 13px -3px rgba(0, 0, 0, 0.3),
+                    inset 0px -3px 0px rgba(0, 0, 0, 0.5);
+                font-size: 100%;
+            }
+        }
+
+        a {
+            img {
+                filter: invert(1);
+                width: clamp(30px, 40px, 50px);
+                cursor: pointer;
+            }
         }
     }
 
@@ -93,12 +110,12 @@ main {
             font-size: 100%;
         }
 
-        .paginacao{
+        .paginacao {
             display: flex;
             justify-content: flex-end;
             align-items: center;
             width: 100%;
-        
+
             button {
                 background-color: #fff;
                 border: #000 1px solid;
@@ -114,41 +131,41 @@ main {
             }
         }
 
-        table{
+        table {
             width: 100%;
             text-align: center;
             color: #fff;
             border: none;
-            
 
-            thead{
+
+            thead {
                 height: 30px;
-            
-                .nome{
+
+                .nome {
                     width: 60%;
                 }
 
-                .acoes{
+                .acoes {
                     width: 40%;
                 }
-            
+
             }
 
-            tbody{
+            tbody {
                 height: 25px;
             }
 
-            th{
+            th {
                 background-color: #000;
                 border: none;
             }
 
-            td{
+            td {
                 background-color: #000;
                 justify-content: center;
 
-                
-                button{
+
+                button {
                     background-color: #fff;
                     height: 90%;
                     width: 30%;
@@ -204,18 +221,40 @@ main {
         flex-direction: column;
 
         nav {
+
             width: 100vw;
-            height: 20vh;
+            height: 15vh;
             flex-direction: row;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
 
-            button {
-                padding: 0%;
-                width: 25%;
-                height: 40%;
-                border-radius: 50px;
-                text-align: center;
+            .botoes {
+                height: 100%;
+                width: 70%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+
+                button {
+                    width: 30%;
+                    background-color: #fff;
+                    border: #000 1px solid;
+                    border-radius: .4rem;
+                    margin: 3px;
+                    padding: 5px;
+                    cursor: pointer;
+                    box-shadow:
+                        0px 2px 4px rgba(0, 0, 0, 0.4),
+                        0px 7px 13px -3px rgba(0, 0, 0, 0.3),
+                        inset 0px -3px 0px rgba(0, 0, 0, 0.5);
+                    font-size: 100%;
+                }
+            }
+
+            a{
+                img{
+                    width: 7vw;
+                }
             }
         }
 
