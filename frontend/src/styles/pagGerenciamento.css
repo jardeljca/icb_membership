@@ -46,13 +46,11 @@ main {
             }
         }
 
-        a {
-            img {
+        img {
                 filter: invert(1);
                 width: clamp(30px, 40px, 50px);
                 cursor: pointer;
             }
-        }
     }
 
     section {
@@ -228,7 +226,7 @@ main {
             align-items: center;
             justify-content: space-between;
 
-            .botoes {
+            .botoes {   
                 height: 100%;
                 width: 70%;
                 flex-direction: row;

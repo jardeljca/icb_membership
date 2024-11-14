@@ -22,4 +22,18 @@ btnConsultas.addEventListener("click", () => {
     if(areaMembros.style.display === 'flex'){
         areaMembros.style.display = 'none';
     }
-})  
+})
+
+/* Funções que controlarão login e logout */
+
+function verificarSessao() {
+    if (!localStorage.getItem("isLoggedIn")) {
+        window.location.href = "loginLider.html";
+    }
+}
+verificarSessao();
+
+function logout() {
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "loginLider.html";
+}

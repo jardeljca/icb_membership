@@ -5,6 +5,7 @@ function logar() {
 
     if (emailLogin == 'admin@admin.com'){
         if(senhaLogin =='admin'){
+            localStorage.setItem("isLoggedIn", true);
             location.href = "pagGerenciamento.html"
         }
         else{

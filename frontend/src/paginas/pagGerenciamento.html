@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+
     <link rel="stylesheet" href="../styles/pagGerenciamento.css">
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,9 +25,9 @@
                 <button id="btnMembros">Membros</button>
                 <button id="btnConsultas">Igrejas</button>
             </div>
-            <a href="/index.html">
-                <img src="/frontend/public/imagens/sair.png" alt="">
-            </a>
+            <button onclick="logout()">
+                <img src="/frontend/public/imagens/sair.png" alt="Logo sair">
+            </button>
         </nav>
         <section id="logoIcb">
             <img src="/frontend/public/imagens/icb_logo.png" alt="Logo ICB">
