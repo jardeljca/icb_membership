@@ -39,8 +39,14 @@
             <h2>Gerenciamento de membros</h2>
             <a href="./cadastroMembro.html" type="button">Adicionar membro</a>
             <div class="paginacao">
-                <button id="btnAnterior">Anterior</button>
-                <button id="btnProximo">Próximo</button>
+                <button id="btnAnterior">
+                    <span class="paginacaoNome">Anterior</span>
+                    <img src="/frontend/public/imagens/anterior.png" alt="Img anterior" class="paginacaoImg">
+                </button>
+                <button id="btnProximo">
+                    <span class="paginacaoNome">Próximo</span>
+                    <img src="/frontend/public/imagens/proximo.png" alt="Img proximo" class="paginacaoImg">
+                </button>
             </div>
             <table>
                 <thead>
@@ -51,11 +57,18 @@
                 </thead>
                 <tbody id="tabelaMembros">
                     <tr>
-                        <td>Nome do membro</td>
+                        <td>Jardel de Castro Queiroz</td>
                         <td>
-                            <button>Ver</button>
-                            <button>Editar</button>
-                            <button>Excluir</button>
+                            <div class="nomesAcoes">
+                                <button>Ver</button>
+                                <button>Editar</button>
+                                <button>Excluir</button>
+                            </div>
+                            <div class="botoesAcoes">
+                                <img src="/frontend/public/imagens/ver.png" alt="Botão ver">
+                                <img src="/frontend/public/imagens/editar.png" alt="Botão Editar">
+                                <img src="/frontend/public/imagens/excluir.png" alt="Botão excluir">
+                            </div>
                         </td>
                     </tr>
                 </tbody>

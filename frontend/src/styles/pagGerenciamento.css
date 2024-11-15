@@ -8,7 +8,6 @@ body {
     width: 100vw;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
-    font-style: normal;
 }
 
 main {
@@ -47,10 +46,10 @@ main {
         }
 
         img {
-                filter: invert(1);
-                width: clamp(30px, 40px, 50px);
-                cursor: pointer;
-            }
+            filter: invert(1);
+            width: clamp(30px, 40px, 50px);
+            cursor: pointer;
+        }
     }
 
     section {
@@ -115,17 +114,23 @@ main {
             width: 100%;
 
             button {
-                background-color: #fff;
-                border: #000 1px solid;
-                border-radius: .4rem;
-                margin: 3px;
-                padding: 5px;
-                cursor: pointer;
-                box-shadow:
-                    0px 2px 4px rgba(0, 0, 0, 0.4),
-                    0px 7px 13px -3px rgba(0, 0, 0, 0.3),
-                    inset 0px -3px 0px rgba(0, 0, 0, 0.5);
-                font-size: 100%;
+                .paginacaoNome {
+                    background-color: #fff;
+                    border: #000 1px solid;
+                    border-radius: .4rem;
+                    margin: 2px;
+                    padding: 5px;
+                    cursor: pointer;
+                    box-shadow:
+                        0px 2px 4px rgba(0, 0, 0, 0.4),
+                        0px 7px 13px -3px rgba(0, 0, 0, 0.3),
+                        inset 0px -3px 0px rgba(0, 0, 0, 0.5);
+                    font-size: 100%;
+                }
+
+                .paginacaoImg {
+                    display: none;
+                }
             }
         }
 
@@ -133,7 +138,6 @@ main {
             width: 100%;
             text-align: center;
             color: #fff;
-            border: none;
 
 
             thead {
@@ -154,21 +158,36 @@ main {
             }
 
             th {
-                background-color: #000;
+                background-color: #000000;
                 border: none;
             }
 
             td {
-                background-color: #000;
+                background-color: #0f0f0f;
                 justify-content: center;
+                padding: 5px;
 
 
-                button {
-                    background-color: #fff;
-                    height: 90%;
-                    width: 30%;
-                    font-size: 90%;
+                .nomesAcoes {
+
+                    button {
+                        background-color: #fff;
+                        height: 90%;
+                        width: 30%;
+                        font-size: 1.2vw;
+                    }
                 }
+
+                .botoesAcoes {
+                    display: none;
+
+                    img {
+                        width: 20px;
+                        cursor: pointer;
+                        filter: invert(1);
+                    }
+                }
+
             }
         }
     }
@@ -217,6 +236,7 @@ main {
 @media screen and (max-width: 600px) {
     main {
         flex-direction: column;
+        height: 100vh;
 
         nav {
 
@@ -226,7 +246,7 @@ main {
             align-items: center;
             justify-content: space-between;
 
-            .botoes {   
+            .botoes {
                 height: 100%;
                 width: 70%;
                 flex-direction: row;
@@ -234,12 +254,12 @@ main {
                 justify-content: center;
 
                 button {
-                    width: 30%;
+                    width: 40%;
                     background-color: #fff;
                     border: #000 1px solid;
                     border-radius: .4rem;
                     margin: 3px;
-                    padding: 5px;
+                    padding: 3px;
                     cursor: pointer;
                     box-shadow:
                         0px 2px 4px rgba(0, 0, 0, 0.4),
@@ -249,10 +269,8 @@ main {
                 }
             }
 
-            a{
-                img{
-                    width: 7vw;
-                }
+            img {
+                width: 8vw;
             }
         }
 
@@ -264,27 +282,47 @@ main {
 
     .areaMembros {
         position: absolute;
-        top: 20vh;
+        top: 15vh;
         width: 100vw;
-        height: 80vh;
+        height: 85vh;
         overflow: hidden;
 
-        button {
-            padding: 0%;
-            width: 25%;
-            height: 7vw;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 3vw;
+        h2 {
+            font-size: 8vw;
         }
-    }
 
-    .areaConsultas {
-        position: absolute;
-        top: 20vh;
-        width: 100vw;
-        height: 80vh;
-        overflow: hidden;
+        a {
+            display: flex;
+            align-items: center;
+            height: 15px;
+        }
+
+        .paginacao .paginacaoNome {
+            display: none;
+        }
+
+        .paginacao .paginacaoImg{
+            display: flex !important;
+            width: clamp(1rem, 2vw + 1rem, 3rem);
+            margin: 3px;
+            filter: invert(1);
+        }
+
+        .areaConsultas {
+            position: absolute;
+            top: 20vh;
+            width: 100vw;
+            height: 80vh;
+            overflow: hidden;
+        }
+
+        table{
+            margin-top: 10px;
+
+            .nome{
+                background-color: red;
+            }
+        }
     }
 }
 
