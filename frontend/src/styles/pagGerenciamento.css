@@ -138,6 +138,7 @@ main {
             width: 100%;
             text-align: center;
             color: #fff;
+            margin-top: 10px;
 
 
             thead {
@@ -287,42 +288,57 @@ main {
         height: 85vh;
         overflow: hidden;
 
-        h2 {
-            font-size: 8vw;
-        }
+        .abaMembros{
+            h2 {
+                font-size: 8vw;
+            }
+    
+            a {
+                display: flex;
+                align-items: center;
+                height: 15px;
+            }
+    
+            .paginacao .paginacaoNome {
+                display: none;
+            }
+    
+            .paginacao .paginacaoImg{
+                display: flex !important;
+                width: clamp(1rem, 2vw + 1rem, 3rem);
+                margin: 3px;
+                filter: invert(1);
+            }
+    
+            table{
+                margin-top: 10px;
+    
+                .nomesAcoes{
+                    display: none;
+                }
 
-        a {
-            display: flex;
-            align-items: center;
-            height: 15px;
-        }
+                .botoesAcoes {
+                    display: flex !important;
+                    justify-content: center;
+                    align-items: center;
 
-        .paginacao .paginacaoNome {
-            display: none;
-        }
-
-        .paginacao .paginacaoImg{
-            display: flex !important;
-            width: clamp(1rem, 2vw + 1rem, 3rem);
-            margin: 3px;
-            filter: invert(1);
-        }
-
-        .areaConsultas {
-            position: absolute;
-            top: 20vh;
-            width: 100vw;
-            height: 80vh;
-            overflow: hidden;
-        }
-
-        table{
-            margin-top: 10px;
-
-            .nome{
-                background-color: red;
+                    img {
+                        width: 20px;
+                        cursor: pointer;
+                        filter: invert(1);
+                        margin: 3px;
+                    }
             }
         }
+        
+    }
+
+    .areaConsultas {
+        position: absolute;
+        top: 20vh;
+        width: 100vw;
+        height: 80vh;
+        overflow: hidden;
     }
 }
 
