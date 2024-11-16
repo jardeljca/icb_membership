@@ -288,57 +288,57 @@ main {
         height: 85vh;
         overflow: hidden;
 
-        .abaMembros{
+        .abaMembros {
             h2 {
                 font-size: 8vw;
             }
-    
+
             a {
                 display: flex;
                 align-items: center;
                 height: 15px;
             }
-    
+
             .paginacao .paginacaoNome {
                 display: none;
             }
-    
-            .paginacao .paginacaoImg{
+
+            .paginacao .paginacaoImg {
                 display: flex !important;
                 width: clamp(1rem, 2vw + 1rem, 3rem);
                 margin: 3px;
                 filter: invert(1);
             }
-    
-            table{
+
+            table {
                 margin-top: 10px;
-    
-                .nomesAcoes{
+
+                .nomesAcoes {
                     display: none;
                 }
 
                 .botoesAcoes {
                     display: flex !important;
-                    justify-content: center;
+                    justify-content: space-evenly;
                     align-items: center;
 
                     img {
                         width: 20px;
                         cursor: pointer;
                         filter: invert(1);
-                        margin: 3px;
                     }
+                }
             }
-        }
-        
-    }
 
-    .areaConsultas {
-        position: absolute;
-        top: 20vh;
-        width: 100vw;
-        height: 80vh;
-        overflow: hidden;
+        }
+
+        .areaConsultas {
+            position: absolute;
+            top: 20vh;
+            width: 100vw;
+            height: 80vh;
+            overflow: hidden;
+        }
     }
 }
 
