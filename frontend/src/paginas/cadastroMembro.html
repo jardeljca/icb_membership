@@ -23,7 +23,7 @@
     </header>
     <hr>
     <main>
-        <form action="">
+        <form id="formCadastro">
             <h2>Cadastro de membros</h2>
             <fieldset class="dadosPessoais">
                 <legend>Dados pessoais</legend>
@@ -52,7 +52,7 @@
                 </label>
                 <label class="caixaPqna">
                     Escolaridade
-                    <select name="escolaridade" id="" required>
+                    <select name="escolaridade" id="escolaridade" required>
                         <option></option>
                         <option value="">Fundamental Incompleto</option>
                         <option value="">Fundamental Completo</option>
@@ -64,12 +64,11 @@
                 </label>
                 <label class="caixaPqna">
                     Instagram
-                    <input type="url" placeholder="Link para Instagran" name="Instagran">
+                    <input type="url" placeholder="Link para Instagran" name="Instagran" id="instagran">
                 </label>
                 <label class="caixaPqna">
                     cep
-                    <input type="text" id="cep" name="cep" placeholder="Apenas números" maxlength="8" required
-                        onblur="buscaCep(this.value)" />
+                    <input type="text" id="cep" name="cep" placeholder="Apenas números" maxlength="8" required onblur="buscaCep(this.value)" />
                 </label>
                 <label class="caixaGde">
                     Logradouro
@@ -126,7 +125,7 @@
 
                 <label class="caixaPqna dataConversao">
                     Data da conversão
-                    <input type="date" name="dataConversao" required>
+                    <input type="date" name="dataConversao" id="dataConversao">
                 </label>
                 <label class="caixaPqna">
                     Batismo nas águas?
@@ -155,7 +154,7 @@
                     </div>
                 </label>
             </fieldset>
-            <button onclick="membro.salvar()" type="submit" class="botaoEnviar">Enviar</button>
+            <button onclick="salvarMembro()" type="submit" class="botaoEnviar">Enviar</button>
         </form>
     </main>
 </body>
