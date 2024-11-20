@@ -23,7 +23,7 @@
     </header>
     <hr>
     <main>
-        <form id="formCadastro">
+        <form id="formCadastro" onsubmit="salvarMembro(event)">
             <h2>Cadastro de membros</h2>
             <fieldset class="dadosPessoais">
                 <legend>Dados pessoais</legend>
@@ -33,16 +33,16 @@
                 </label>
                 <label class="caixaPqna">
                     Data de nascimento
-                    <input type="date" name="dataNascimento" required>
+                    <input id="dataNascimento" type="date" name="dataNascimento" required>
                 </label>
                 <label class="caixaPqna">
                     Estado civil
-                    <select name="estadoCivil" required>
+                    <select id="estadoCivil" name="estadoCivil" required>
                         <option></option>
-                        <option value="">Solteiro</option>
-                        <option value="">Casado</option>
-                        <option value="">Divorciado</option>
-                        <option value="">Viúvo</option>
+                        <option value="Solteiro">Solteiro</option>
+                        <option value="Casado">Casado</option>
+                        <option value="Divorciado">Divorciado</option>
+                        <option value="Viúvo">Viúvo</option>
                     </select>
                 </label>
                 <label class="caixaPqna">
@@ -54,17 +54,17 @@
                     Escolaridade
                     <select name="escolaridade" id="escolaridade" required>
                         <option></option>
-                        <option value="">Fundamental Incompleto</option>
-                        <option value="">Fundamental Completo</option>
-                        <option value="">Médio Incompleto</option>
-                        <option value="">Médio Completo</option>
-                        <option value="">Superior Incompleto</option>
-                        <option value="">Superior Completo</option>
+                        <option value="Fundamental Incompleto">Fundamental Incompleto</option>
+                        <option value="Fundamental Completo">Fundamental Completo</option>
+                        <option value="Médio Incompleto">Médio Incompleto</option>
+                        <option value="Médio Completo">Médio Completo</option>
+                        <option value="Superior Incompleto">Superior Incompleto</option>
+                        <option value="Superior Completo">Superior Completo</option>
                     </select>
                 </label>
                 <label class="caixaPqna">
                     Instagram
-                    <input type="url" placeholder="Link para Instagran" name="Instagran" id="instagran">
+                    <input type="url" placeholder="Link para Instagram" name="Instagram" id="instagram">
                 </label>
                 <label class="caixaPqna">
                     cep
@@ -154,7 +154,7 @@
                     </div>
                 </label>
             </fieldset>
-            <button onclick="salvarMembro()" type="submit" class="botaoEnviar">Enviar</button>
+            <button type="submit" class="botaoEnviar">Enviar</button>
         </form>
     </main>
 </body>

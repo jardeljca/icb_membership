@@ -1,5 +1,3 @@
-import Membro from "./classeMembros";
-
 /* Função para mascara do telefone */
 function formatarTelefone(input) {
     // Remove todos os caracteres não numéricos
@@ -70,17 +68,31 @@ function esconderAreaTexto() {
 }
 
 /* Função para salvar novo membro */
+class Membro {
+    constructor(nome, dataNascimento, estadoCivil, contato, escolaridade, instagram, endereco, dadosEclesiasticos) {
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.estadoCivil = estadoCivil;
+        this.contato = contato;
+        this.escolaridade = escolaridade;
+        this.instagram = instagram;
+        this.endereco = endereco;
+        this.dadosEclesiasticos = dadosEclesiasticos;
+    }
+}
 
 const membrosArray = [];
 
-function salvarMembro() {
+function salvarMembro(event) {
+    event.preventDefault();
+    
     // Captura os valores do formulário através dos IDs
     const nome = document.getElementById("nome").value;
     const dataNascimento = document.getElementById("dataNascimento").value;
     const estadoCivil = document.getElementById("estadoCivil").value;
     const contato = document.getElementById("contato").value;
     const escolaridade = document.getElementById("escolaridade").value;
-    const instagram = document.getElementById("instagran").value;
+    const instagram = document.getElementById("instagram").value;
 
     const cep = document.getElementById("cep").value;
     const logradouro = document.getElementById("logradouro").value;
