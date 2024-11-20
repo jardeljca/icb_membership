@@ -1,6 +1,11 @@
 async function logar() {
     const emailLogin = document.getElementById('emailLogin').value;
     const senhaLogin = document.getElementById('senhaLogin').value;
+
+    if (!email || !senha) {
+        alert("Preencha todos os campos!");
+        return;
+    }
   
     try {
       const response = await axios.post('https://backend-icb-membership.vercel.app/login/', {
@@ -9,12 +14,16 @@ async function logar() {
       });
   
       if (response.status === 200) {
-        alert(response.data.access_token)
-        sessionStorage.setItem('accessToken', JSON.stringify(response.data.access_token));
+        alert("Login realizado com sucesso")
+        sessionStorage.setItem('access_token', JSON.stringify(response.data.access_token));
         window.location.replace('pagGerenciamento.html');
       }
     } catch (error) {
-        console.error(error.response.data);
+        if (error.response && error.response.data) {
+            alert(error.response.data.detail);
+        } else {
+            alert("Erro ao conectar com o servidor.");
+        }
         document.getElementById('emailLogin').value = ""
         document.getElementById('senhaLogin').value = ""
     }
