@@ -9,17 +9,14 @@ async function logar() {
       });
   
       if (response.status === 200) {
-        console.log('Login bem-sucedido:', response.data);
-        alert('Login realizado com sucesso!');
+        alert(response.data.access_token)
+        sessionStorage.setItem('accessToken', JSON.stringify(response.data.access_token));
+        window.location.replace('pagGerenciamento.html');
       }
     } catch (error) {
-      if (error.response) {
-        console.error('Erro no login:', error.response.data);
-        alert('Erro: ' + error.response.data.message);
-      } else {
-        console.error('Erro na requisição:', error.message);
-        alert('Erro na requisição: ' + error.message);
-      }
+        console.error(error.response.data);
+        document.getElementById('emailLogin').value = ""
+        document.getElementById('senhaLogin').value = ""
     }
   }
 
