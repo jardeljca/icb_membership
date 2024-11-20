@@ -33,7 +33,7 @@
                 <div class="form">
                     <input type="email" placeholder="Email" name="email" id="emailLogin"/>
                     <input type="password" placeholder="Senha" name="password" id="senhaLogin"/>
-                    <button type="submit" onclick="logar(); return false"> Entrar </button>
+                    <button type="submit" onclick="event.preventDefault(); logar(); return false"> Entrar </button>
                     <a href="">Esqueci a senha</a>
                 </div>
             </form>
