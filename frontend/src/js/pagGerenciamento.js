@@ -27,7 +27,7 @@ btnConsultas.addEventListener("click", () => {
 /* Funções que controlarão login e logout */
 
 function verificarSessao() {
-    if (!sessionStorage.getItem("access_token").length > 0) {
+    if (!sessionStorage.getItem("access_token")) {
         window.location.href = "loginLider.html";
     }
     else{
@@ -35,7 +35,7 @@ function verificarSessao() {
     }
 }
 
-window.onload = verificarSessao;
+window.onload = verificarSessao()
 
 window.onpopstate = function () {
     logout();
