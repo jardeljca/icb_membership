@@ -1,5 +1,4 @@
 async function logar() {
-    alert("login")
     const emailLogin = document.getElementById('emailLogin').value;
     const senhaLogin = document.getElementById('senhaLogin').value;
 
@@ -14,7 +13,7 @@ async function logar() {
         senha: senhaLogin,
       });
   
-      if (response.status === 200) {
+      if (response.status == 200) {
         alert("Login realizado com sucesso")
         sessionStorage.setItem('access_token', JSON.stringify(response.data.access_token));
         window.location.replace('pagGerenciamento.html');
