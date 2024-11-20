@@ -1,4 +1,4 @@
-import axios from 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'
+src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
 
 export async function logar() {
     const emailLogin = document.getElementById('emailLogin').value;
