@@ -30,9 +30,6 @@ function verificarSessao() {
     if (!sessionStorage.getItem("access_token")) {
         window.location.href = "loginLider.html";
     }
-    else{
-        alert(sessionStorage.getItem("access_token").length)
-    }
 }
 
 window.onload = verificarSessao()
