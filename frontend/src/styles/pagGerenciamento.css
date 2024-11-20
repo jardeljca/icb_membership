@@ -80,25 +80,48 @@ main {
     width: 80vw;
     height: 100vh;
     overflow: hidden;
+}
 
-    .abaMembros {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        width: 95%;
-        height: 95%;
+.abaMembros {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 95%;
+    height: 95%;
+}
 
-        h2 {
-            color: #fff;
-        }
+.abaMembros h2 {
+    color: #fff;
+}
 
-        a {
+.abaMembros a {
+    background-color: #fff;
+    border: #000 1px solid;
+    border-radius: .4rem;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow:
+        0px 2px 4px rgba(0, 0, 0, 0.4),
+        0px 7px 13px -3px rgba(0, 0, 0, 0.3),
+        inset 0px -3px 0px rgba(0, 0, 0, 0.5);
+    font-size: 100%;
+}
+
+.abaMembros .paginacao {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+
+    button {
+        .paginacaoNome {
             background-color: #fff;
             border: #000 1px solid;
             border-radius: .4rem;
-            margin: 10px;
-            padding: 10px;
+            margin: 2px;
+            padding: 5px;
             cursor: pointer;
             box-shadow:
                 0px 2px 4px rgba(0, 0, 0, 0.4),
@@ -107,90 +130,57 @@ main {
             font-size: 100%;
         }
 
-        .paginacao {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            width: 100%;
-
-            button {
-                .paginacaoNome {
-                    background-color: #fff;
-                    border: #000 1px solid;
-                    border-radius: .4rem;
-                    margin: 2px;
-                    padding: 5px;
-                    cursor: pointer;
-                    box-shadow:
-                        0px 2px 4px rgba(0, 0, 0, 0.4),
-                        0px 7px 13px -3px rgba(0, 0, 0, 0.3),
-                        inset 0px -3px 0px rgba(0, 0, 0, 0.5);
-                    font-size: 100%;
-                }
-
-                .paginacaoImg {
-                    display: none;
-                }
-            }
+        .paginacaoImg {
+            display: none;
         }
+    }
+}
 
-        table {
-            width: 100%;
-            text-align: center;
-            color: #fff;
-            margin-top: 10px;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
 
+    th {
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        height: 30px;
+    }
 
-            thead {
-                height: 30px;
+    .tituloNome {
+        width: 65%;
+    }
 
-                .nome {
-                    width: 60%;
-                }
+    .tituloAcoes {
+        width: 35%;
+    }
 
-                .acoes {
-                    width: 40%;
-                }
+    td {
+        background-color: #fff;
+        color: #000;
+        text-align: center;
+    }
 
-            }
+    .corpoAcoes {
+        display: flex;
+        justify-content: center;
+    }
 
-            tbody {
-                height: 25px;
-            }
+    .acaoNome {
+        background-color: #fff;
+        border: #000 1px solid;
+        border-radius: .4rem;
+        margin: 2px 1px;
+        padding: 2px;
+        cursor: pointer;
+        font-size: 100%;
+        height: 25px;
+        width: 10vw;
+    }
 
-            th {
-                background-color: #000000;
-                border: none;
-            }
-
-            td {
-                background-color: #0f0f0f;
-                justify-content: center;
-                padding: 5px;
-
-
-                .nomesAcoes {
-
-                    button {
-                        background-color: #fff;
-                        height: 90%;
-                        width: 30%;
-                        font-size: 1.2vw;
-                    }
-                }
-
-                .botoesAcoes {
-                    display: none;
-
-                    img {
-                        width: 20px;
-                        cursor: pointer;
-                        filter: invert(1);
-                    }
-                }
-
-            }
-        }
+    .acaoImg {
+        display: none;
     }
 }
 
@@ -287,58 +277,55 @@ main {
         width: 100vw;
         height: 85vh;
         overflow: hidden;
+    }
 
-        .abaMembros {
-            h2 {
-                font-size: 8vw;
-            }
-
-            a {
-                display: flex;
-                align-items: center;
-                height: 15px;
-            }
-
-            .paginacao .paginacaoNome {
-                display: none;
-            }
-
-            .paginacao .paginacaoImg {
-                display: flex !important;
-                width: clamp(1rem, 2vw + 1rem, 3rem);
-                margin: 3px;
-                filter: invert(1);
-            }
-
-            table {
-                margin-top: 10px;
-
-                .nomesAcoes {
-                    display: none;
-                }
-
-                .botoesAcoes {
-                    display: flex !important;
-                    justify-content: space-evenly;
-                    align-items: center;
-
-                    img {
-                        width: 20px;
-                        cursor: pointer;
-                        filter: invert(1);
-                    }
-                }
-            }
-
+    .abaMembros {
+        h2 {
+            font-size: 6vw;
         }
 
-        .areaConsultas {
-            position: absolute;
-            top: 20vh;
-            width: 100vw;
-            height: 80vh;
-            overflow: hidden;
+        a {
+            display: flex;
+            align-items: center;
+            height: 15px;
         }
+
+        .paginacao .paginacaoNome {
+            display: none;
+        }
+
+        .paginacao .paginacaoImg {
+            display: flex !important;
+            width: clamp(1rem, 2vw + 1rem, 3rem);
+            margin: 3px;
+            filter: invert(1);
+        }
+    }
+
+    table {
+        margin-top: 10px;
+    }
+
+    table th {
+        height: 20px;
+    }
+
+    table .acaoNome{
+        display: none;
+    }
+
+    table .acaoImg {
+        display: flex !important;
+        width: clamp(1rem, 2vw + 1rem, 3rem);
+        margin: 8px;
+    }
+
+    .areaConsultas {
+        position: absolute;
+        top: 20vh;
+        width: 100vw;
+        height: 80vh;
+        overflow: hidden;
     }
 }
 

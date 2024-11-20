@@ -11,7 +11,7 @@ areaConsultas.style.display = 'none';
 
 btnMembros.addEventListener("click", () => {
     areaMembros.style.display = 'flex';
-    if(areaConsultas.style.display === 'flex'){
+    if (areaConsultas.style.display === 'flex') {
         areaConsultas.style.display = 'none';
     }
     logoIcb.style.display = 'none';
@@ -19,7 +19,7 @@ btnMembros.addEventListener("click", () => {
 
 btnConsultas.addEventListener("click", () => {
     areaConsultas.style.display = 'flex';
-    if(areaMembros.style.display === 'flex'){
+    if (areaMembros.style.display === 'flex') {
         areaMembros.style.display = 'none';
     }
 })
@@ -33,7 +33,29 @@ function verificarSessao() {
 }
 verificarSessao();
 
+window.onpopstate = function () {
+    logout();
+};
+
 function logout() {
     localStorage.removeItem("isLoggedIn");
+    alert("Você foi desconectado!");
     window.location.href = "loginLider.html";
+}
+
+
+/* Adicionar membro cadastrado à tabela */
+/* import { membrosArray } from './cadastroMembro.js'; */
+
+function listaTabela (){
+    let tbody = document.getElementById("tbody");
+
+    for(let i = 0; i < membrosArray.length; i++){
+        let novaLinha = tbody.insertRow();
+
+        let colunaNome = novaLinha.insertCell();
+        let colunaAcoes = novaLinha.insertCell();
+
+
+    }
 }

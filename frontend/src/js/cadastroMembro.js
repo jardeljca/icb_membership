@@ -130,3 +130,5 @@ function salvarMembro(event) {
     esconderAreaTexto();
     console.log(membrosArray);
 }
+
+export { membrosArray };
