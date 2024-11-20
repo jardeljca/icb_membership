@@ -47,14 +47,31 @@ function logout() {
 /* Adicionar membro cadastrado à tabela */
 /* import { membrosArray } from './cadastroMembro.js'; */
 
-function listaTabela (){
-    let tbody = document.getElementById("tbody");
+function listaTabela() {
+    let tbody = document.getElementById("tabelaMembros");
 
-    for(let i = 0; i < membrosArray.length; i++){
+    for (let i = 0; i < membrosArray.length; i++) {
         let novaLinha = tbody.insertRow();
 
         let colunaNome = novaLinha.insertCell();
         let colunaAcoes = novaLinha.insertCell();
+
+        colunaNome.innerText = membrosArray[i].nome;
+
+        colunaAcoes.classList.add("corpoAcoes");
+
+        let imgVer = document.createElement("img");
+        imgVer.src = "../img/ver.png";
+
+        let imgEditar = document.createElement("img");
+        imgEditar.src = "../img/editar.png";
+
+        let imgExcluir = document.createElement("img");
+        imgExcluir.src = "../img/excluir.png";
+
+        colunaAcoes.appendChild(imgVer);
+        colunaAcoes.appendChild(imgEditar);
+        colunaAcoes.appendChild(imgExcluir);
 
 
     }

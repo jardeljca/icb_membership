@@ -124,6 +124,7 @@ function salvarMembro(event) {
     membrosArray.push(membro);
 
     // Exibe uma mensagem de sucesso
+    listaTabela();
     alert("Membro salvo com sucesso!");
     document.getElementById("formCadastro").reset();
     esconderData();
@@ -131,4 +132,4 @@ function salvarMembro(event) {
     console.log(membrosArray);
 }
 
-export { membrosArray };
+/* export { membrosArray }; */
