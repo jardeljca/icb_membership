@@ -38,7 +38,7 @@ window.onpopstate = function () {
 };
 
 function logout() {
-    sessionStorage.removeItem("access_token");
+    sessionStorage.removeItem("access_token")
     alert("Você foi desconectado!");
     window.location.href = "loginLider.html";
 }
