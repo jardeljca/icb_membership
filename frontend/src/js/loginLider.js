@@ -1,5 +1,3 @@
-src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
-
 export async function logar() {
     const emailLogin = document.getElementById('emailLogin').value;
     const senhaLogin = document.getElementById('senhaLogin').value;
