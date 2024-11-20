@@ -27,7 +27,7 @@ btnConsultas.addEventListener("click", () => {
 /* Funções que controlarão login e logout */
 
 function verificarSessao() {
-    if (!sessionStorage.getItem("access_token")) {
+    if (!sessionStorage.getItem("access_token").length > 0) {
         window.location.href = "loginLider.html";
     }
 }
