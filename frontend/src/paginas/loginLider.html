@@ -12,9 +12,6 @@
     <title>Login líder</title>
 </head>
 
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="/frontend/src/js/loginLider.js"></script>
-
 <body>
     <header>
         <img src="/frontend/public/imagens/icb_logo.png" alt="Logo icb">
@@ -28,15 +25,24 @@
         <div class="login-wrap">
             <h2>Login líder</h2>
 
-            <form>
+            <form id="loginForm">
                 <div class="form">
                     <input type="email" placeholder="Email" name="email" id="emailLogin"/>
                     <input type="password" placeholder="Senha" name="password" id="senhaLogin"/>
-                    <button type="submit" onclick="logar(); return false"> Entrar </button>
+                    <button type="submit" onclick="logar();" > Entrar </button>
                     <a href="">Esqueci a senha</a>
                 </div>
             </form>
         </div>
     </main>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/frontend/src/js/loginLider.js"></script>
+<script>
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+    })
+</script>
+
 </html>

@@ -27,7 +27,7 @@ btnConsultas.addEventListener("click", () => {
 /* Funções que controlarão login e logout */
 
 function verificarSessao() {
-    if (!localStorage.getItem("isLoggedIn")) {
+    if (!sessionStorage.getItem("access_token")) {
         window.location.href = "loginLider.html";
     }
 }
@@ -38,7 +38,7 @@ window.onpopstate = function () {
 };
 
 function logout() {
-    localStorage.removeItem("isLoggedIn");
+    sessionStorage.removeItem("access_token");
     alert("Você foi desconectado!");
     window.location.href = "loginLider.html";
 }

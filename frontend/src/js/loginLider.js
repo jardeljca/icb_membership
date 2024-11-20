@@ -2,6 +2,8 @@ async function logar() {
     const emailLogin = document.getElementById('emailLogin').value;
     const senhaLogin = document.getElementById('senhaLogin').value;
 
+    
+
     if (!emailLogin || !senhaLogin) {
         alert("Preencha todos os campos!");
         return;
