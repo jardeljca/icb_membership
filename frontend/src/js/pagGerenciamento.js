@@ -34,6 +34,12 @@ function verificarSessao() {
 
 window.onload = verificarSessao()
 
+window.onload = getUsersPaginado(0, 9)
+
+window.onload = function () {
+    gerarPaginacao()
+}
+
 window.onpopstate = function () {
     logout();
 };
@@ -47,7 +53,7 @@ function logout() {
 
 /* Adicionar membro cadastrado à tabela */
 /* import { membrosArray } from './cadastroMembro.js'; */
-
+/* 
 function listaTabela() {
     let tbody = document.getElementById("tabelaMembros");
 
@@ -75,5 +81,59 @@ function listaTabela() {
         colunaAcoes.appendChild(imgExcluir);
 
 
+    }
+} */
+
+async function gerarPaginacao() {
+    try {
+        const response = await axios.get('https://backend-icb-membership.vercel.app/membros', { headers: { 'Authorization': `Bearer ${sessionStorage.getItem('access_token')}` } })
+        const users = response.data
+        const totalUsers = users.length
+        const quantidadePagina = Math.ceil(totalUsers / 10)
+        let contador = 0
+        const divPaginacao = document.getElementById('paginacao')
+        divPaginacao.innerHTML = ''
+        for (let index = 0; contador < quantidadePagina; index += 10) {
+            contador = contador + 1
+            let inicio = index
+            let fim = inicio + 9
+
+            const li = document.createElement('li')
+            li.className = 'page-item'
+            const a = document.createElement('a')
+            a.className = 'page-link'
+            a.href = '#'
+            a.textContent = contador
+            a.setAttribute('onclick', 'getUsersPaginado(' + inicio + ', ' + fim + ')')
+            li.appendChild(a)
+            divPaginacao.appendChild(li)
+        }
+    } catch (error) {
+        console.error('Erro ao tentar acessar a lista de usuários', error)
+    }
+}
+
+async function getUsersPaginado(inicio, fim) {
+    try {
+        const response = await axios.get(`https://backend-icb-membership.vercel.app/membros/filtro?inicio =${inicio}&fim=${fim}` , { headers: { 'Authorization': `Bearer ${sessionStorage.getItem('access_token')}` } })
+        const users = response.data.users
+        const tableUsers = document.getElementById('bodyTableUsers')
+        tableUsers.innerHTML = ''
+
+        users.forEach(user => {
+            const row = document.createElement('tr')
+            row.innerHTML = `
+                        <td>${user.nome}</td>
+                        <td>${user.email}</td>
+                        <td>${new Date(user.createdAt).toLocaleDateString('pt-BR')}</td>
+                        <td>
+                        <a type='button' href='#' class='btn btn-primary btn-sm' onclick="editarUser('${user.email}')">Editar</a>
+                        <a type='button' href='#' class='btn btn-danger btn-sm' onclick="deletarUser('${user.email}')">Excluir</a>
+                        </td>
+                    `
+            tableUsers.appendChild(row)
+        });
+    } catch (error) {
+        console.error('Erro ao tentar acessar a lista de usuários', error)
     }
 }
