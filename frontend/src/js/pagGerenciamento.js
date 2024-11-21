@@ -86,7 +86,7 @@ function listaTabela() {
 
 async function gerarPaginacao() {
     try {
-        const response = await axios.get('https://backend-icb-membership.vercel.app/membros', { headers: { 'Authorization': `Bearer ${sessionStorage.getItem('access_token')}` } })
+        const response = await axios.get('https://backend-icb-membership.vercel.app/membros', { headers: { 'Authorization': `Bearer ${sessionStorage.getItem('access_token').replace("\"", "")}` } })
         const users = response.data
         const totalUsers = users.length
         const quantidadePagina = Math.ceil(totalUsers / 10)
