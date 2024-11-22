@@ -34,7 +34,7 @@ function verificarSessao() {
 
 window.onload = verificarSessao()
 
-window.onload = getUsersPaginado(0, 9)
+window.onload = getMembrosPaginado(0, 9)
 
 window.onload = function () {
     gerarPaginacao()
@@ -86,10 +86,16 @@ function listaTabela() {
 
 async function gerarPaginacao() {
     try {
-        const response = await axios.get('https://backend-icb-membership.vercel.app/membros', { headers: { 'Authorization': `Bearer ${sessionStorage.getItem('access_token').replace("\"", "")}` } })
-        const users = response.data
-        const totalUsers = users.length
-        const quantidadePagina = Math.ceil(totalUsers / 10)
+        const token = sessionStorage.getItem("access_token");
+        const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
+        const response = await axios.get('https://backend-icb-membership.vercel.app/membros', {
+            headers: {
+              'Authorization': `Bearer ${formattedToken}`,
+            },
+          })
+        const membros = response.data.data
+        const totalMembros = membros.length
+        const quantidadePagina = Math.ceil(totalMembros/ 10)
         let contador = 0
         const divPaginacao = document.getElementById('paginacao')
         divPaginacao.innerHTML = ''
@@ -109,31 +115,37 @@ async function gerarPaginacao() {
             divPaginacao.appendChild(li)
         }
     } catch (error) {
-        console.error('Erro ao tentar acessar a lista de usuários', error)
+        console.error('Erro ao tentar acessar a lista de membros', error)
     }
 }
 
-async function getUsersPaginado(inicio, fim) {
+async function getMembrosPaginado(inicio, fim) {
     try {
-        const response = await axios.get(`https://backend-icb-membership.vercel.app/membros/filtro?inicio =${inicio}&fim=${fim}` , { headers: { 'Authorization': `Bearer ${sessionStorage.getItem('access_token')}` } })
-        const users = response.data.users
-        const tableUsers = document.getElementById('bodyTableUsers')
-        tableUsers.innerHTML = ''
+        const token = sessionStorage.getItem("access_token");
+        const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
+        const response = await axios.get(`https://backend-icb-membership.vercel.app/membros/filtro?inicio=${inicio}&fim=${fim}`, {
+          headers: {
+            'Authorization': `Bearer ${formattedToken}`,
+          },
+        });
+        const membros = response.data.data
+        const tableMembros = document.getElementById('bodyTableMembros')
+        tableMembros.innerHTML = ''
 
-        users.forEach(user => {
+        membros.forEach(membro => {
             const row = document.createElement('tr')
             row.innerHTML = `
-                        <td>${user.nome}</td>
-                        <td>${user.email}</td>
-                        <td>${new Date(user.createdAt).toLocaleDateString('pt-BR')}</td>
-                        <td>
-                        <a type='button' href='#' class='btn btn-primary btn-sm' onclick="editarUser('${user.email}')">Editar</a>
-                        <a type='button' href='#' class='btn btn-danger btn-sm' onclick="deletarUser('${user.email}')">Excluir</a>
-                        </td>
-                    `
-            tableUsers.appendChild(row)
+                <td>${membro.nome}</td>
+                <td>${membro.unidade}</td>
+                <td>
+                <a type='button' href='#' class='acaoNome' onclick="visualizarMembro('${membro.id}')">Ver</a>
+                <a type='button' href='#' class='acaoNome' onclick="editarMembro('${membro.id}')">Editar</a>
+                <a type='button' href='#' class='acaoNome' onclick="deletarMembro('${membro.id}')">Excluir</a>
+                </td>
+            `
+            tableMembros.appendChild(row)
         });
     } catch (error) {
-        console.error('Erro ao tentar acessar a lista de usuários', error)
+        console.error('Erro ao tentar acessar a lista de usuários paginados', error)
     }
 }
