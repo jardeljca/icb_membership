@@ -86,6 +86,7 @@ function listaTabela() {
 
 async function gerarPaginacao() {
     try {
+        verificarSessao()
         const token = sessionStorage.getItem("access_token");
         const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
         const response = await axios.get('https://backend-icb-membership.vercel.app/membros', {
@@ -121,6 +122,7 @@ async function gerarPaginacao() {
 
 async function getMembrosPaginado(inicio, fim) {
     try {
+        verificarSessao()
         const token = sessionStorage.getItem("access_token");
         const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
         const response = await axios.get(`https://backend-icb-membership.vercel.app/membros/filtro?inicio=${inicio}&fim=${fim}`, {
