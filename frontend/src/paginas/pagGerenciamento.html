@@ -20,55 +20,26 @@
 
 <body>
     <main>
+        <!-- Essa sessão é a coluna alteral preta da página -->
         <nav>
             <div class="botoes">
-                <button id="btnMembros" onclick="verificarSessao()">Membros</button>
-                <button id="btnConsultas" onclick="verificarSessao()">Igrejas</button>
+                <button>
+                    <a href="./pagMembros.html">Membros</a>
+                </button>
+                <button>
+                    <a href="./pagIgrejas.html">Igrejas</a>
+                </button>
             </div>
             <button onclick="logout()">
                 <img src="/frontend/public/imagens/sair.png" alt="Logo sair">
             </button>
         </nav>
+        <!-- Essa sessão é o o conteúdo que esta em azul no site e possui a logo e nome icb... -->
         <section id="logoIcb">
             <img src="/frontend/public/imagens/icb_logo.png" alt="Logo ICB">
             <h1>ICB MEMBERSHIP</h1>
         </section>
     </main>
-    <div class="areaMembros" id="areaMembros">
-        <div class="abaMembros">
-            <h2>Gerenciamento de membros</h2>
-            <a href="./cadastroMembro.html" type="button">Adicionar membro</a>
-            <!-- <div class="paginacao">
-                <button id="btnAnterior">
-                    <span class="paginacaoNome">Anterior</span>
-                    <img src="/frontend/public/imagens/anterior.png" alt="Img anterior" class="paginacaoImg">
-                </button>
-                <button id="btnProximo">
-                    <span class="paginacaoNome">Próximo</span>
-                    <img src="/frontend/public/imagens/proximo.png" alt="Img proximo" class="paginacaoImg">
-                </button>
-            </div> -->
-            <nav aria-label="Navegação de página exemplo" class="d-flex flex-row-reverse">
-                <ul id="paginacao" class="pagination">
-                </ul>
-            </nav>
-            <table id="customers">
-                <thead>
-                    <tr>
-                        <th class="tituloNome">Nome</th>
-                        <th class="tituloNome">Unidade</th>
-                        <th class="tituloAcoes">Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="bodyTableMembros">
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="areaConsultas" id="areaConsultas">
-        <h3>futuramente será implantado uma área para consultas</h3>
-    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
 </script>

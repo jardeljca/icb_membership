@@ -10,29 +10,7 @@ body {
     font-weight: 400;
 }
 
-#customers {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-#customers td, #customers th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-  
-#customers tr:hover {background-color: #ddd;}
-  
-#customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #04AA6D;
-    color: white;
-  }
-
+  /* Sessão para estilização da pagGerenciamento */
 main {
     display: flex;
 
@@ -93,14 +71,14 @@ main {
     }
 }
 
+
+/* Sessão para estilização da pagMembros */
 .areaMembros {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 80vw;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
@@ -115,7 +93,7 @@ main {
 }
 
 .abaMembros h2 {
-    color: #fff;
+    color: #000;
 }
 
 .abaMembros a {
@@ -132,7 +110,57 @@ main {
     font-size: 100%;
 }
 
-.abaMembros .paginacao {
+/* Tabela */
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    background-color: #334e3b;
+    padding: 5xp;
+    border-radius: 10px;
+
+  }
+  
+#customers td, #customers th {
+    border: 1px solid #072f3b;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+  }
+  
+#customers tr:nth-child(even){background-color: #65806d;}
+  
+#customers tr:hover {background-color: #072f3b;}
+  
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #072f3b;
+    color: white;
+  }
+
+  #customers .tituloUnidade, #customers .tituloAcoes {
+    width: 25%;
+  }
+
+  #customers .colunaAcoes{
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+  }
+
+  #customers .acaoNome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+  }
+/* .abaMembros .paginacao {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -157,55 +185,7 @@ main {
             display: none;
         }
     }
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-
-    th {
-        background-color: #000;
-        color: #fff;
-        text-align: center;
-        height: 30px;
-    }
-
-    .tituloNome {
-        width: 65%;
-    }
-
-    .tituloAcoes {
-        width: 35%;
-    }
-
-    td {
-        background-color: #fff;
-        color: #000;
-        text-align: center;
-    }
-
-    .corpoAcoes {
-        display: flex;
-        justify-content: center;
-    }
-
-    .acaoNome {
-        background-color: #fff;
-        border: #000 1px solid;
-        border-radius: .4rem;
-        margin: 2px 1px;
-        padding: 2px;
-        cursor: pointer;
-        font-size: 100%;
-        height: 25px;
-        width: 10vw;
-    }
-
-    .acaoImg {
-        display: none;
-    }
-}
+} */
 
 .areaMembros::before {
     content: "";
@@ -218,16 +198,17 @@ table {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    opacity: 0.3;
+    opacity: 0.6;
     z-index: -1;
 }
 
+/* Sessão para estilização da pagIgrejas */
 .areaConsultas {
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 80vw;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
@@ -243,7 +224,7 @@ table {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    opacity: 0.3;
+    opacity: 0.6;
     z-index: -1;
 }
 
