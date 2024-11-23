@@ -10,7 +10,7 @@ body {
     font-weight: 400;
 }
 
-  /* Sessão para estilização da pagGerenciamento */
+/* Sessão para estilização da pagGerenciamento */
 main {
     display: flex;
 
@@ -113,53 +113,69 @@ main {
 /* Tabela */
 #customers {
     font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
-    background-color: #334e3b;
+    width: 90vw;
+    background-color: #367bc3;
     padding: 5xp;
     border-radius: 10px;
+}
 
-  }
-  
-#customers td, #customers th {
-    border: 1px solid #072f3b;
+#customers td,
+#customers th {
+    border: 1px solid #1165bd;
     border-radius: 10px;
     margin: 5px;
     padding: 10px;
-  }
-  
-#customers tr:nth-child(even){background-color: #65806d;}
-  
-#customers tr:hover {background-color: #072f3b;}
-  
+}
+
+#customers tr:nth-child(even) {
+    background-color: #5a93cf;
+}
+
+#customers tr:hover {
+    background-color: #1165bd;
+}
+
 #customers th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #072f3b;
+    background-color: #094e96;
     color: white;
-  }
+    text-align: center;
+}
 
-  #customers .tituloUnidade, #customers .tituloAcoes {
+#customers .tituloUnidade,
+#customers .tituloAcoes {
     width: 25%;
-  }
+}
 
-  #customers .colunaAcoes{
+#customers .colunaAcoes {
     display: flex;
     justify-content: space-around;
     margin: 0;
-  }
+    padding: 5px;
+}
 
-  #customers .acaoNome{
+#customers .acaoNome {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: clamp(10vw, 10vw, 10vw);
     height: 30px;
-    margin: 0;
+    margin: 2px;
     padding: 0;
     background-color: #000;
     color: #fff;
-  }
+}
+
+#customers .icone {
+    display: none;
+}
+
+#customers .texto {
+    font-size: 100%;
+}
+
 /* .abaMembros .paginacao {
     display: flex;
     justify-content: flex-end;
@@ -229,6 +245,8 @@ main {
 }
 
 @media screen and (max-width: 600px) {
+
+    /* PagGerenciamento */
     main {
         flex-direction: column;
         height: 100vh;
@@ -275,17 +293,16 @@ main {
         }
     }
 
+    /* pagMembros */
     .areaMembros {
-        position: absolute;
-        top: 15vh;
         width: 100vw;
-        height: 85vh;
-        overflow: hidden;
+        height: 100vh;
     }
 
     .abaMembros {
+
         h2 {
-            font-size: 6vw;
+            font-size: 7vw;
         }
 
         a {
@@ -294,7 +311,7 @@ main {
             height: 15px;
         }
 
-        .paginacao .paginacaoNome {
+        /* .paginacao .paginacaoNome {
             display: none;
         }
 
@@ -303,33 +320,34 @@ main {
             width: clamp(1rem, 2vw + 1rem, 3rem);
             margin: 3px;
             filter: invert(1);
-        }
+        } */
     }
 
-    table {
-        margin-top: 10px;
+    /* Tabela */
+    #customers {
+        width: 90%;
+        height: 90%;
+        font-size: 4vw;
     }
 
-    table th {
-        height: 20px;
+    #customers .colunaAcoes {
+        display: flex;
+        flex-wrap: wrap;
     }
 
-    table .acaoNome{
+    #customers .acaoNome {
+        background-color: #fff;
+        height: 7vw;
+    }
+
+    #customers .icone {
+        display: block;
+        width: 5vw;
+        height: vw;
+    }
+
+    #customers .texto {
         display: none;
-    }
-
-    table .acaoImg {
-        display: flex !important;
-        width: clamp(1rem, 2vw + 1rem, 3rem);
-        margin: 8px;
-    }
-
-    .areaConsultas {
-        position: absolute;
-        top: 20vh;
-        width: 100vw;
-        height: 80vh;
-        overflow: hidden;
     }
 }
 
