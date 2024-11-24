@@ -14,9 +14,9 @@ window.onload = function () {
     gerarPaginacao()
 }
 
-window.onpopstate = function () {
+/*window.onpopstate = function () {
     logout();
-};
+};*/
 
 function logout() {
     sessionStorage.removeItem("access_token")
@@ -73,7 +73,7 @@ async function gerarPaginacao() {
             a.className = 'page-link'
             a.href = '#'
             a.textContent = contador
-            a.setAttribute('onclick', 'getUsersPaginado(' + inicio + ', ' + fim + ')')
+            a.setAttribute('onclick', 'getMembrosPaginado(' + inicio + ', ' + fim + ')')
             li.appendChild(a)
             divPaginacao.appendChild(li)
         }
