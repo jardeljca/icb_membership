@@ -25,11 +25,10 @@ function logout() {
 }
 
 async function deletarMembro(id) {
-    
     try {
         const token = sessionStorage.getItem("access_token");
         const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
-        const response = await axios.get(`https://backend-icb-membership.vercel.app/membro/${id}`, {
+        const response = await axios.delete(`https://backend-icb-membership.vercel.app/membro/${id}`, {
             headers: {
                 'Authorization': `Bearer ${formattedToken}`,
             },
@@ -39,8 +38,9 @@ async function deletarMembro(id) {
             location.reload()
         }
     } catch (error){
-        console.error(error.response.data.error);
         alert("Erro na exclusão do Membro")
+        console.error(error.response.data);
+        location.reload()
     }
     
     
