@@ -24,6 +24,28 @@ function logout() {
     window.location.href = "loginLider.html";
 }
 
+async function deletarMembro(id) {
+    
+    try {
+        const token = sessionStorage.getItem("access_token");
+        const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
+        const response = await axios.get(`https://backend-icb-membership.vercel.app/membro/${id}`, {
+            headers: {
+                'Authorization': `Bearer ${formattedToken}`,
+            },
+        });
+        if (response.data) {
+            alert("Membro deletado com sucesso")
+            location.reload()
+        }
+    } catch (error){
+        console.error(error.response.data.error);
+        alert("Erro na exclusão do Membro")
+    }
+    
+    
+}
+
 async function gerarPaginacao() {
     try {
         verificarSessao()
