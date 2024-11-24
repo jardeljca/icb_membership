@@ -8,7 +8,7 @@ function verificarSessao() {
 
 window.onload = verificarSessao()
 
-window.onload = getMembrosPaginado(0, 9)
+window.onload = getAdministradoresPaginado(0, 9)
 
 window.onload = function () {
     gerarPaginacao()
@@ -24,7 +24,7 @@ function logout() {
     window.location.href = "loginLider.html";
 }
 
-async function deletarMembro(id) {
+async function deletarAdministrador(id) {
     try {
         const token = sessionStorage.getItem("access_token");
         const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
@@ -57,7 +57,7 @@ async function gerarPaginacao() {
             },
         })
         const administradores = response.data.data.data
-        const totalAdministrador = administradores.length
+        const totalAdministradores = administradores.length
         const quantidadePagina = Math.ceil(totalAdministradores / 10)
         let contador = 0
         const divPaginacao = document.getElementById('paginacao')
@@ -100,7 +100,7 @@ async function getAdministradoresPaginado(inicio, fim) {
             const row = document.createElement('tr')
             row.innerHTML = `
                 <td style='color: #FFFFFF; text-align: center;'>${administrador.nome}</td>
-                <td style='color: #FFFFFF; text-align: center;'>${administrador.unidade}</td>
+                <td style='color: #FFFFFF; text-align: center;'>${administrador.tipo}</td>
                 <td class="colunaAcoes">
                     <a type='button' class='acaoNome' onclick="visualizarAdministrador('${administrador.id}')">
                         <img src="/frontend/public/imagens/ver.png" alt="Ícone ver" class="icone">

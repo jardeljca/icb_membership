@@ -12,9 +12,38 @@
 
     <title>Gerenciamento de igrejas</title>
 </head>
+
 <body>
-    <div class="areaConsultas" id="areaConsultas">
-        <h3>Futuramente página de gerenciamento de igrejas</h3>
+    
+    <div class="areaMembros" id="areaMembros">
+        
+        <div class="abaMembros">
+            <h2>Gerenciamento de igrejas</h2>
+            <a href="./cadastroIgreja.html" type="button">Adicionar igreja</a>
+            
+            <nav aria-label="Navegação de página exemplo" class="d-flex flex-row-reverse">
+                <ul id="paginacao" class="pagination">
+                </ul>
+            </nav>
+            <table id="customers">
+                <thead>
+                    <tr>
+                        <th class="tituloNome">Nome</th>
+                        <th class="tituloUnidade">Cidade</th>
+                        <th class="tituloAcoes">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTableUnidades">
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
+</script>
+<script src="/frontend/src/js/pagIgreja.js"></script>
+
+
 </html>

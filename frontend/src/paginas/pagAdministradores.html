@@ -10,18 +10,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-    <title>Gerenciamento de membros</title>
+    <title>Gerenciamento de administradores</title>
 </head>
-
-
 
 <body>
     
     <div class="areaMembros" id="areaMembros">
         
         <div class="abaMembros">
-            <h2>Gerenciamento de membros</h2>
-            <a href="./cadastroMembro.html" type="button">Adicionar membro</a>
+            <h2>Gerenciamento de administradores</h2>
+            <a href="./cadastroAdministrador.html" type="button">Adicionar administrador</a>
             
             <nav aria-label="Navegação de página exemplo" class="d-flex flex-row-reverse">
                 <ul id="paginacao" class="pagination">
@@ -31,11 +29,11 @@
                 <thead>
                     <tr>
                         <th class="tituloNome">Nome</th>
-                        <th class="tituloUnidade">Unidade</th>
+                        <th class="tituloUnidade">Tipo</th>
                         <th class="tituloAcoes">Ações</th>
                     </tr>
                 </thead>
-                <tbody id="bodyTableMembros">
+                <tbody id="bodyTableAdministradores">
                     </tr>
                 </tbody>
             </table>
@@ -45,7 +43,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
 </script>
-<script src="/frontend/src/js/pagGerenciamento.js"></script>
+<script src="/frontend/src/js/pagAdministrador.js"></script>
 
 
 </html>
