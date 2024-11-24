@@ -99,7 +99,7 @@ async function getAdministradoresPaginado(inicio, fim) {
         administradores.forEach(administrador => {
             const row = document.createElement('tr')
             row.innerHTML = `
-                <td style='color: #FFFFFF; text-align: center;'>${administrador.nome}</td>
+                <td style='color: #FFFFFF; text-align: center;'>${administrador.membro['nome']}</td>
                 <td style='color: #FFFFFF; text-align: center;'>${administrador.tipo}</td>
                 <td class="colunaAcoes">
                     <a type='button' class='acaoNome' onclick="visualizarAdministrador('${administrador.id}')">

@@ -56,7 +56,7 @@ async function gerarPaginacao() {
                 'Authorization': `Bearer ${formattedToken}`,
             },
         })
-        const unidades = response.data.data.data
+        const unidades = response.data.data
         const totalUnidades = unidades.length
         const quantidadePagina = Math.ceil(totalUnidades / 10)
         let contador = 0
