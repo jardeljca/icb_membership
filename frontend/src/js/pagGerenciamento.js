@@ -77,18 +77,18 @@ async function getMembrosPaginado(inicio, fim) {
         membros.forEach(membro => {
             const row = document.createElement('tr')
             row.innerHTML = `
-                <td>${membro.nome}</td>
-                <td>${membro.unidade}</td>
+                <td style='color: #FFFFFF; text-align: center;'>${membro.nome}</td>
+                <td style='color: #FFFFFF; text-align: center;'>${membro.unidade}</td>
                 <td class="colunaAcoes">
-                    <a type='button' href='#' class='acaoNome' onclick="visualizarMembro('${membro.id}')">
+                    <a type='button' class='acaoNome' onclick="visualizarMembro('${membro.id}')">
                         <img src="/frontend/public/imagens/ver.png" alt="Ícone ver" class="icone">
                         <span class='texto'>Ver</span>
                     </a>
-                    <a type='button' href='#' class='acaoNome' onclick="editarMembro('${membro.id}')">
+                    <a type='button' class='acaoNome' onclick="editarMembro('${membro.id}')">
                         <img src="/frontend/public/imagens/editar.png" alt="Ícone Editar" class="icone">
                         <span class='texto'>Editar</span>
                     </a>
-                    <a type='button' href='#' class='acaoNome' onclick="deletarMembro('${membro.id}')">
+                    <a type='button' class='acaoNome' onclick="deletarMembro('${membro.id}')">
                         <img src="/frontend/public/imagens/excluir.png" alt="Ícone Excluir" class="icone">
                         <span class='texto'>Excluir</span>
                     </a>
