@@ -160,10 +160,16 @@
                     </div>
                 </label> -->
             </fieldset>
-            <button type="submit" class="botaoEnviar">Enviar</button>
+            <button type="submit" class="botaoEnviar" onclick="CadastrarAdministrador();">Enviar</button>
         </form>
     </main>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/frontend/src/js/cadastroMembro.js"></script>
+<script>
+    formCadastro.addEventListener('submit', (e) => {
+        e.preventDefault()
+    })
+</script>
 
 </html>
