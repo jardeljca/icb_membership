@@ -56,7 +56,7 @@ async function gerarListaMembros() {
 
         response.data.data.data.forEach((membro) => {
             const option = document.createElement("option");
-            option.value = membro.nome+","+membro.id;
+            option.value = membro.id + "," + membro.unidade_id;
             option.textContent = membro.nome;
             selectElement.appendChild(option);
         });
@@ -70,17 +70,15 @@ async function CadastrarAdministrador() {
     const token = sessionStorage.getItem("access_token");
     const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
     try {
-        const membro = document.getElementById("membro").value;
+        let membro = document.getElementById("membro").value;
         membro = membro.split(",")[0]
-        const unidade = document.getElementById("membro").value;
+        let unidade = document.getElementById("membro").value;
         unidade = unidade.split(",")[1]
         const senha = document.getElementById("senha").value;
         const tipo = document.getElementById("tipo").value;
-        const acessoUnidades = document.getElementById("igreja").value;
-        acessoUnidades = "["+acessoUnidades+"]"
-
+        acessoUnidades = "["+unidade+"]"
         const response = await axios.post(
-            'https://backend-icb-membership.vercel.app/unidade/',
+            'https://backend-icb-membership.vercel.app/administrador/',
             {
                 "membro_id": membro,
                 "unidade_id": unidade,
@@ -95,15 +93,15 @@ async function CadastrarAdministrador() {
             }
         );
         if (response.data.detail['id']) {
-            alert("Igreja cadastrada com sucesso!!!")
+            alert("Administrador cadastrado com sucesso!!!")
             window.location.replace('pagGerenciamento.html');
         }
     } catch (error) {
-        if(error.response.data.detail == "Já existe uma unidade com este nome"){
-            alert("Já existe uma igreja com este nome")
+        if (error.response.data.detail == "Já existe um membro cadastrado para este administrador") {
+            alert("Já existe um membro cadastrado para este administrador")
         }
-        else{
-            alert("Erro na criação da Igreja")
+        else {
+            alert("Erro na criação do perfil de administrador")
         }
         console.log(error)
     }
