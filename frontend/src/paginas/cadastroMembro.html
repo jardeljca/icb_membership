@@ -31,9 +31,30 @@
                     Nome
                     <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" required />
                 </label>
+                <label class="caixaGde">
+                    Email
+                    <input type="text" name="email" id="email" placeholder="Digite seu email" required />
+                </label>
+                <label class="caixaPqna">
+                    Sexo
+                    <div class="sexo">
+                        <div class="radio">
+                            <input type="radio" name="batismo" value="sim" required>Masculino
+                            <input type="radio" name="batismo" value="nao" required>Feminino
+                        </div>
+                    </div>
+                </label>
                 <label class="caixaPqna">
                     Data de nascimento
                     <input id="dataNascimento" type="date" name="dataNascimento" required>
+                </label>
+                <label class="caixaPqna">
+                    Qual a sua igreja?
+                    <select id="igreja" name="igreja" required>
+                        <option></option>
+                        <option value="ICB_Cascavel">ICB_Cascavel</option>
+                        <option value="ICB_Fortaleza">ICB_Fortaleza</option>
+                    </select>
                 </label>
                 <label class="caixaPqna">
                     Estado civil
@@ -46,25 +67,13 @@
                     </select>
                 </label>
                 <label class="caixaPqna">
+                    Profissão
+                    <input type="text" id="profissao" name="profissao">
+                </label>
+                <label class="caixaPqna">
                     Contato
                     <input type="text" id="contato" name="contato" placeholder="(xx)xxxxx-xxxx" maxlength="11"
                         onkeyup="formatarTelefone(this)" required>
-                </label>
-                <label class="caixaPqna">
-                    Escolaridade
-                    <select name="escolaridade" id="escolaridade" required>
-                        <option></option>
-                        <option value="Fundamental Incompleto">Fundamental Incompleto</option>
-                        <option value="Fundamental Completo">Fundamental Completo</option>
-                        <option value="Médio Incompleto">Médio Incompleto</option>
-                        <option value="Médio Completo">Médio Completo</option>
-                        <option value="Superior Incompleto">Superior Incompleto</option>
-                        <option value="Superior Completo">Superior Completo</option>
-                    </select>
-                </label>
-                <label class="caixaPqna">
-                    Instagram
-                    <input type="url" placeholder="Link para Instagram" name="Instagram" id="instagram">
                 </label>
                 <label class="caixaPqna">
                     cep
@@ -81,10 +90,6 @@
                 <label class="caixaPqna">
                     Bairro
                     <input type="text" id="bairro" name="bairro">
-                </label>
-                <label class="caixaPqna">
-                    Cidade
-                    <input type="text" id="cidade" name="cidade">
                 </label>
                 <label class="caixaPqna">
                     Estado
@@ -119,20 +124,20 @@
                         <option value="TO">Tocantins</option>
                     </select>
                 </label>
+                <label class="caixaPqna">
+                    Cidade
+                    <input type="text" id="cidade" name="cidade">
+                </label>
             </fieldset>
             <fieldset class="dadosEclesiarticos">
                 <legend>Dados Eclesiásticos</legend>
 
-                <label class="caixaPqna dataConversao">
-                    Data da conversão
-                    <input type="date" name="dataConversao" id="dataConversao">
-                </label>
                 <label class="caixaPqna">
                     Batismo nas águas?
                     <div class="batismoAguas">
                         <div class="radio">
-                            <input type="radio" name="batismo" value="sim" required onclick="mostrarData()">Sim
-                            <input type="radio" name="batismo" value="nao" required onclick="esconderData()">Não
+                            <input type="radio" name="batismo" value="sim" required>Sim
+                            <input type="radio" name="batismo" value="nao" required>Não
                         </div>
                         <div id="campoData">
                             <input type="date" name="dataBatismo" id="dataBatismo" class="dataBatismo"
@@ -140,6 +145,7 @@
                         </div>
                     </div>
                 </label>
+                <!--
                 <label class="caixaPqna">
                     Possui cargos?
                     <div class="cargoIgreja">
@@ -152,7 +158,7 @@
                                 placeholder="Qual cargo?">
                         </div>
                     </div>
-                </label>
+                </label> -->
             </fieldset>
             <button type="submit" class="botaoEnviar">Enviar</button>
         </form>

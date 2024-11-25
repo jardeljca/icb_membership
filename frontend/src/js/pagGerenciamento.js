@@ -4,6 +4,8 @@ function verificarSessao() {
     }
 }
 
+window.onload = verificarSessao()
+
 function logout() {
     sessionStorage.removeItem("access_token")
     alert("Você foi desconectado!");
