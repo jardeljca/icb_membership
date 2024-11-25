@@ -112,7 +112,6 @@ async function CadastrarMembro() {
     const token = sessionStorage.getItem("access_token");
     const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
     try {
-        alert(formattedToken)
         const nome = document.getElementById("nome").value;
         const email = document.getElementById("email").value;
         const dataNascimento = document.getElementById("dataNascimento").value;
