@@ -163,7 +163,12 @@ async function CadastrarMembro() {
             window.location.replace('pagGerenciamento.html');
         }
     } catch (error) {
-        alert("Erro na criação do Membro")
+        if(error.response.data.detail == "Já existe um membro com este email"){
+            alert("Já existe um membro com este email")
+        }
+        else{
+            alert("Erro na criação do Membro")
+        }
         console.log(error)
     }
 }
