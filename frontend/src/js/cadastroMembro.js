@@ -102,53 +102,69 @@ async function gerarListaIgrejas() {
             option.textContent = unidade.nome;
             selectElement.appendChild(option);
         });
-    } catch(error){
+    } catch (error) {
         console.error("Erro ao carregar igrejas: ", error)
     }
 }
 
-async function Cadastrar() {
-
+async function CadastrarMembro() {
+    verificarSessao()
+    const token = sessionStorage.getItem("access_token");
+    const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
     try {
-        let nome = document.getElementById("nome").value;
-        let email = document.getElementById("email").value;
-        let dataNascimento = document.getElementById("dataNascimento").value;
-        let estadoCivil = document.getElementById("estadoCivil").value;
-        let unidade_id = document.getElementById("igreja").value;
-        let contato = document.getElementById("contato").value;
-        let profissao = document.getElementById("profissao").value;
-        let cep = document.getElementById("cep").value;
-        let endereco = document.getElementById("logradouro").value;
-        let numero = document.getElementById("numero").value;
-        let bairro = document.getElementById("bairro").value;
-        let cidade = document.getElementById("cidade").value;
-        let estado = document.getElementById("estado").value;
-        let batismoRadio = document.querySelector('input[name="batismo"]:checked');
-        let batismo = batismoRadio.value
-        let sexoRadio = document.querySelector('input[name="sexo"]:checked');
-        let sexo = sexoRadio.value
-        let posicao = "Membro"
+        alert(formattedToken)
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const dataNascimento = document.getElementById("dataNascimento").value;
+        const estadoCivil = document.getElementById("estadoCivil").value;
+        const unidade_id = document.getElementById("igreja").value;
+        const contato = document.getElementById("contato").value;
+        const profissao = document.getElementById("profissao").value;
+        const cep = document.getElementById("cep").value;
+        const endereco = document.getElementById("logradouro").value;
+        const numero = document.getElementById("numero").value;
+        const bairro = document.getElementById("bairro").value;
+        const cidade = document.getElementById("cidade").value;
+        const estado = document.getElementById("estado").value;
+        const batismoRadio = document.querySelector('input[name="batismo"]:checked');
+        const batismo = batismoRadio.value
+        const sexoRadio = document.querySelector('input[name="sexo"]:checked');
+        const sexo = sexoRadio.value
+        const posicao = "Membro"
 
-        const token = sessionStorage.getItem("access_token");
-        const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
-        const response = await axios.post('https://backend-icb-membership.vercel.app/membro/', {
-            headers: {
-                'Authorization': `Bearer ${formattedToken}`,
+        const response = await axios.post(
+            'https://backend-icb-membership.vercel.app/membro/',
+            {
+                "nome": nome,
+                "email": email,
+                "data_nascimento": dataNascimento,
+                "sexo": sexo,
+                "unidade_id": unidade_id,
+                "posicao": posicao,
+                "endereco": endereco,
+                "bairro": bairro,
+                "estado_civil": estadoCivil,
+                "telefone": contato,
+                "cep": cep,
+                "estado": estado,
+                "cidade": cidade,
+                "numero": numero,
+                "profissao": profissao,
+                "batismo": batismo
             },
-        },
-            { nome, email, dataNascimento, sexo, unidade_id, posicao, cep, estado, cidade, numero, endereco, bairro, estadoCivil, contato, profissao, batismo });
-
-        if (response.data.message == "Membro criado com sucesso") {
+            {
+                headers: {
+                    'Authorization': `Bearer ${formattedToken}`,
+                },
+            }
+        );
+        if (response.data.detail['id']) {
             alert("Membro cadastrado com sucesso!!!")
             window.location.replace('pagGerenciamento.html');
         }
     } catch (error) {
-        console.error(error.response.data);
-        if (error.response.data.detail == "Já existe um membro com este email") {
-            alert('Email já cadastrado')
-        } else {
-            alert('Erro no cadastro do membro')
-        }
+        alert("Erro na criação do Membro")
+        console.log(error)
     }
 }
 
