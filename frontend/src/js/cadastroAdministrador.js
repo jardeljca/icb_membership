@@ -76,7 +76,7 @@ async function CadastrarAdministrador() {
         unidade = unidade.split(",")[1]
         const senha = document.getElementById("senha").value;
         const tipo = document.getElementById("tipo").value;
-        acessoUnidades = "["+unidade+"]"
+        acessoUnidades = unidade.split("")
         const response = await axios.post(
             'https://backend-icb-membership.vercel.app/administrador/',
             {
@@ -103,6 +103,6 @@ async function CadastrarAdministrador() {
         else {
             alert("Erro na criação do perfil de administrador")
         }
-        console.log(error)
+        console.log(error.response.data.detail)
     }
 }
