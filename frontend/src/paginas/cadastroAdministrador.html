@@ -27,22 +27,35 @@
             <h2>Cadastro de administradores</h2>
             <fieldset class="dadosPessoais">
                 <legend>Dados do Membro</legend>
-                <label class="caixaPqna">
+                <label class="caixaGde">
                     Quem é o membro?
                     <select id="membro" name="membro" required>
-                        <option disabled selected>Selecione o membro</option>
+                        <option value="" disabled selected>Selecione um membro</option>
                     </select>
                 </label>
                 <label class="caixaGde">
                     Senha
                     <input type="text" name="senha" id="senha" placeholder="Digite a senha do administrador" required />
                 </label>
+                <label class="caixaGde">
+                    Tipo de Administrador
+                    <select id="tipo" name="tipo" required>
+                        <option value="ADMGeral">Geral</option>
+                        <option value="ADMUnidade">Unidade</option>
+                    </select>
+                </label>
+                <label class="caixaGde">
+                    Qual a igreja em que este membro terá acesso como administrador?
+                    <select id="igreja" name="igreja" required>
+                        <option value="" disabled selected>Selecione uma igreja</option>
+                    </select>
+                </label>
             <button type="submit" class="botaoEnviar" onclick="CadastrarAdministrador();">Enviar</button>
         </form>
     </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="/frontend/src/js/cadastroMembro.js"></script>
+<script src="/frontend/src/js/cadastroAdministrador.js"></script>
 <script>
     formCadastro.addEventListener('submit', (e) => {
         e.preventDefault()

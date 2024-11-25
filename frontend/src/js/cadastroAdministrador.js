@@ -5,18 +5,22 @@ function verificarSessao() {
 }
 window.onload = verificarSessao()
 
+window.onload = gerarListaMembros()
+
+window.onload = gerarListaIgrejas()
+
 function logout() {
     sessionStorage.removeItem("access_token")
     alert("Você foi desconectado!");
     window.location.href = "loginLider.html";
 }
 
-async function gerarListaMembros() {
+async function gerarListaIgrejas() {
     try {
         verificarSessao()
         const token = sessionStorage.getItem("access_token");
         const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
-        const response = await axios.get('https://backend-icb-membership.vercel.app/membros', {
+        const response = await axios.get('https://backend-icb-membership.vercel.app/unidades', {
             headers: {
                 'Authorization': `Bearer ${formattedToken}`,
             },
@@ -36,6 +40,31 @@ async function gerarListaMembros() {
     }
 }
 
+async function gerarListaMembros() {
+    try {
+        verificarSessao()
+        const token = sessionStorage.getItem("access_token");
+        const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
+        const response = await axios.get('https://backend-icb-membership.vercel.app/membros', {
+            headers: {
+                'Authorization': `Bearer ${formattedToken}`,
+            },
+        })
+
+        const selectElement = document.getElementById("membro");
+        selectElement.innerHTML = '<option value="" disabled selected>Selecione um membro</option>';
+
+        response.data.data.data.forEach((membro) => {
+            const option = document.createElement("option");
+            option.value = membro.nome+","+membro.id;
+            option.textContent = membro.nome;
+            selectElement.appendChild(option);
+        });
+    } catch (error) {
+        console.error("Erro ao carregar os membros: ", error)
+    }
+}
+
 async function CadastrarAdministrador() {
     verificarSessao()
     const token = sessionStorage.getItem("access_token");
@@ -47,7 +76,8 @@ async function CadastrarAdministrador() {
         unidade = unidade.split(",")[1]
         const senha = document.getElementById("senha").value;
         const tipo = document.getElementById("tipo").value;
-        const acessoUnidades = document.getElementById("acessoUnidades").value;
+        const acessoUnidades = document.getElementById("igreja").value;
+        acessoUnidades = "["+acessoUnidades+"]"
 
         const response = await axios.post(
             'https://backend-icb-membership.vercel.app/unidade/',
