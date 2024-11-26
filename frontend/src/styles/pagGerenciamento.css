@@ -433,10 +433,6 @@ main {
         font-size: 4vw;
     }
 
-    #customers th{
-        background-color: red;
-    }
-
     #customers .colunaAcoes {
         display: flex;
         flex-wrap: wrap;
