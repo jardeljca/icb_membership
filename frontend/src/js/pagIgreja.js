@@ -25,6 +25,7 @@ function logout() {
 }
 
 async function deletarUnidade(id) {
+    mostrarCarregando()
     try {
         const token = sessionStorage.getItem("access_token");
         const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
@@ -35,11 +36,13 @@ async function deletarUnidade(id) {
         });
         if (response.data) {
             alert("Unidade deletada com sucesso")
+            esconderCarregando()
             location.reload()
         }
     } catch (error){
         alert("Erro na exclusão do Membro")
         console.error(error.response.data);
+        esconderCarregando()
         location.reload()
     }
     
@@ -47,6 +50,7 @@ async function deletarUnidade(id) {
 }
 
 async function gerarPaginacao() {
+    mostrarCarregando()
     try {
         verificarSessao()
         const token = sessionStorage.getItem("access_token");
@@ -77,12 +81,15 @@ async function gerarPaginacao() {
             li.appendChild(a)
             divPaginacao.appendChild(li)
         }
+        esconderCarregando()
     } catch (error) {
         console.error('Erro ao tentar acessar a lista de unidades', error)
+        esconderCarregando()
     }
 }
 
 async function getUnidadesPaginado(inicio, fim) {
+    mostrarCarregando()
     try {
         verificarSessao()
         const token = sessionStorage.getItem("access_token");
@@ -118,8 +125,10 @@ async function getUnidadesPaginado(inicio, fim) {
             `
             tableUnidades.appendChild(row)
         });
+        esconderCarregando()
     } catch (error) {
         console.error('Erro ao tentar acessar a lista de unidades paginados', error)
+        esconderCarregando()
     }
 }
 

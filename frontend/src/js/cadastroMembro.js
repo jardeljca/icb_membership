@@ -109,6 +109,7 @@ async function gerarListaIgrejas() {
 
 async function CadastrarMembro() {
     verificarSessao()
+    mostrarCarregando()
     const token = sessionStorage.getItem("access_token");
     const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
     try {
@@ -159,14 +160,17 @@ async function CadastrarMembro() {
         );
         if (response.data.detail['id']) {
             alert("Membro cadastrado com sucesso!!!")
+            esconderCarregando()
             window.location.replace('pagGerenciamento.html');
         }
     } catch (error) {
         if (error.response.data.detail == "Já existe um membro com este email") {
             alert("Já existe um membro com este email")
+            esconderCarregando()
         }
         else {
             alert("Erro na criação do Membro")
+            esconderCarregando()
         }
         console.log(error)
     }

@@ -44,6 +44,7 @@ function buscaCep(cep) {
 
 async function CadastrarIgreja() {
     verificarSessao()
+    mostrarCarregando()
     const token = sessionStorage.getItem("access_token");
     const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
     try {
@@ -72,14 +73,17 @@ async function CadastrarIgreja() {
         );
         if (response.data.detail['id']) {
             alert("Igreja cadastrada com sucesso!!!")
+            esconderCarregando()
             window.location.replace('pagGerenciamento.html');
         }
     } catch (error) {
         if(error.response.data.detail == "Já existe uma unidade com este nome"){
             alert("Já existe uma igreja com este nome")
+            esconderCarregando()
         }
         else{
             alert("Erro na criação da Igreja")
+            esconderCarregando()
         }
         console.log(error)
     }

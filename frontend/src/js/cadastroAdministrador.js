@@ -67,6 +67,7 @@ async function gerarListaMembros() {
 
 async function CadastrarAdministrador() {
     verificarSessao()
+    mostrarCarregando()
     const token = sessionStorage.getItem("access_token");
     const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
     try {
@@ -94,14 +95,17 @@ async function CadastrarAdministrador() {
         );
         if (response.data.detail['id']) {
             alert("Administrador cadastrado com sucesso!!!")
+            esconderCarregando()
             window.location.replace('pagGerenciamento.html');
         }
     } catch (error) {
         if (error.response.data.detail == "Já existe um membro cadastrado para este administrador") {
             alert("Já existe um membro cadastrado para este administrador")
+            esconderCarregando()
         }
         else {
             alert("Erro na criação do perfil de administrador")
+            esconderCarregando()
         }
         console.log(error.response.data.detail)
     }

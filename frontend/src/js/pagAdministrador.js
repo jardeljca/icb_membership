@@ -25,6 +25,7 @@ function logout() {
 }
 
 async function deletarAdministrador(id) {
+    mostrarCarregando()
     try {
         const token = sessionStorage.getItem("access_token");
         const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
@@ -35,9 +36,11 @@ async function deletarAdministrador(id) {
         });
         if (response.data) {
             alert("Administrador deletado com sucesso")
+            esconderCarregando()
             location.reload()
         }
     } catch (error){
+        esconderCarregando()
         alert("Erro na exclusão do Administrador")
         console.error(error.response.data);
         location.reload()
@@ -47,6 +50,7 @@ async function deletarAdministrador(id) {
 }
 
 async function gerarPaginacao() {
+    mostrarCarregando()
     try {
         verificarSessao()
         const token = sessionStorage.getItem("access_token");
@@ -77,12 +81,15 @@ async function gerarPaginacao() {
             li.appendChild(a)
             divPaginacao.appendChild(li)
         }
+        esconderCarregando()
     } catch (error) {
+        esconderCarregando()
         console.error('Erro ao tentar acessar a lista de administradores', error)
     }
 }
 
 async function getAdministradoresPaginado(inicio, fim) {
+    mostrarCarregando()
     try {
         verificarSessao()
         const token = sessionStorage.getItem("access_token");
@@ -118,7 +125,9 @@ async function getAdministradoresPaginado(inicio, fim) {
             `
             tableAdministradores.appendChild(row)
         });
+        esconderCarregando()
     } catch (error) {
+        esconderCarregando()
         console.error('Erro ao tentar acessar a lista de administradores paginados', error)
     }
 }
