@@ -141,7 +141,7 @@ async function CadastrarMembroPublico() {
         );
         if (response.data.detail['id']) {
             alert("Membro cadastrado com sucesso!!!")
-            window.location.replace('#');
+            location.reload()
         }
     } catch (error) {
         if (error.response.data.detail == "Já existe um membro com este email") {
