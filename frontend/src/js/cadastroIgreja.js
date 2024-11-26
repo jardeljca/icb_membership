@@ -71,9 +71,9 @@ async function CadastrarIgreja() {
                 },
             }
         );
+        esconderCarregando()
         if (response.data.detail['id']) {
             alert("Igreja cadastrada com sucesso!!!")
-            esconderCarregando()
             window.location.replace('pagGerenciamento.html');
         }
     } catch (error) {

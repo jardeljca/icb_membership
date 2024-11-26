@@ -93,9 +93,9 @@ async function CadastrarAdministrador() {
                 },
             }
         );
+        esconderCarregando()
         if (response.data.detail['id']) {
             alert("Administrador cadastrado com sucesso!!!")
-            esconderCarregando()
             window.location.replace('pagGerenciamento.html');
         }
     } catch (error) {

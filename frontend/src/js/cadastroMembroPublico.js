@@ -134,9 +134,9 @@ async function CadastrarMembroPublico() {
                 "batismo": batismo
             }
         );
+        esconderCarregando()
         if (response.data.detail['id']) {
             alert("Membro cadastrado com sucesso!!!")
-            esconderCarregando()
             location.reload()
         }
     } catch (error) {

@@ -158,9 +158,9 @@ async function CadastrarMembro() {
                 },
             }
         );
+        esconderCarregando()
         if (response.data.detail['id']) {
             alert("Membro cadastrado com sucesso!!!")
-            esconderCarregando()
             window.location.replace('pagGerenciamento.html');
         }
     } catch (error) {
