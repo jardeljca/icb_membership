@@ -71,7 +71,6 @@ function esconderAreaTexto() {
 
 async function gerarListaIgrejas() {
     try {
-        verificarSessao()
         const token = sessionStorage.getItem("access_token");
         const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
         const response = await axios.get('https://backend-icb-membership.vercel.app/unidades', {
@@ -95,7 +94,6 @@ async function gerarListaIgrejas() {
 }
 
 async function CadastrarMembroPublico() {
-    verificarSessao()
     const token = sessionStorage.getItem("access_token");
     const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
     try {
