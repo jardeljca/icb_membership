@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="../styles/pagGerenciamento.css">
     <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/styleModal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -42,6 +43,20 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="esconderModal()">&times;</span>
+                    <h2>Informações do Membro</h2>
+                    <p><strong>Nome:</strong> <span id="nome"></span></p>
+                    <p><strong>Email:</strong> <span id="email"></span></p>
+                    <p><strong>Sexo:</strong> <span id="sexo"></span></p>
+                    <p><strong>Posição:</strong> <span id="posicao"></span></p>
+                    <p><strong>Telefone:</strong> <span id="telefone"></span></p>
+                    <p><strong>Unidade:</strong> <span id="unidade"></span></p>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>

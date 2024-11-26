@@ -132,10 +132,49 @@ async function getUnidadesPaginado(inicio, fim) {
     }
 }
 
+async function visualizarMembro(id) {
+    verificarSessao()
+    mostrarCarregando()
+    document.querySelector('.modal').style.visibility = 'visible';
+
+    const nome = document.getElementById('nome');
+    const email = document.getElementById('email');
+    const sexo = document.getElementById('sexo');
+    const posicao = document.getElementById('posicao');
+    const telefone = document.getElementById('telefone');
+    const unidade = document.getElementById('unidade');
+    
+    try {
+        const token = sessionStorage.getItem("access_token");
+        const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
+        const response = await axios.get(`https://backend-icb-membership.vercel.app/membro/${id}`, {
+            headers: {
+                'Authorization': `Bearer ${formattedToken}`,
+            },
+        });
+
+        const membro = response.data.data;
+        nome.textContent = membro.nome;
+        email.textContent = membro.email;
+        sexo.textContent = membro.sexo;
+        posicao.textContent = membro.posicao;
+        telefone.textContent = membro.telefone;
+        unidade.textContent = membro.unidade.nome;
+        esconderCarregando()
+    } catch (error) {
+        document.querySelector('.modal').style.visibility = 'hidden';
+        console.error('Erro ao buscar dados:', error);
+    }
+};
+
 function mostrarCarregando() {
     document.querySelector('.carregando').style.visibility = 'visible';
 }
 
 function esconderCarregando() {
     document.querySelector('.carregando').style.visibility = 'hidden';
+}
+
+function esconderModal() {
+    document.querySelector('.modal').style.visibility = 'hidden';
 }
