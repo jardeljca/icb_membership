@@ -336,17 +336,6 @@ main {
             align-items: center;
             height: 15px;
         }
-
-        /* .paginacao .paginacaoNome {
-            display: none;
-        }
-
-        .paginacao .paginacaoImg {
-            display: flex !important;
-            width: clamp(1rem, 2vw + 1rem, 3rem);
-            margin: 3px;
-            filter: invert(1);
-        } */
     }
 
     /* Tabela */
