@@ -132,34 +132,32 @@ async function getUnidadesPaginado(inicio, fim) {
     }
 }
 
-async function visualizarMembro(id) {
+async function visualizarUnidade(id) {
     verificarSessao()
     mostrarCarregando()
     document.querySelector('.modal').style.visibility = 'visible';
 
     const nome = document.getElementById('nome');
-    const email = document.getElementById('email');
-    const sexo = document.getElementById('sexo');
-    const posicao = document.getElementById('posicao');
-    const telefone = document.getElementById('telefone');
-    const unidade = document.getElementById('unidade');
+    const cidade = document.getElementById('cidade');
+    const cep = document.getElementById('cep');
+    const bairro = document.getElementById('bairro');
+    const estado = document.getElementById('estado');
     
     try {
         const token = sessionStorage.getItem("access_token");
         const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
-        const response = await axios.get(`https://backend-icb-membership.vercel.app/membro/${id}`, {
+        const response = await axios.get(`https://backend-icb-membership.vercel.app/igreja/${id}`, {
             headers: {
                 'Authorization': `Bearer ${formattedToken}`,
             },
         });
 
-        const membro = response.data.data;
-        nome.textContent = membro.nome;
-        email.textContent = membro.email;
-        sexo.textContent = membro.sexo;
-        posicao.textContent = membro.posicao;
-        telefone.textContent = membro.telefone;
-        unidade.textContent = membro.unidade.nome;
+        const unidade = response.data.data;
+        nome.textContent = unidade.nome;
+        cidade.textContent = unidade.cidade;
+        cep.textContent = unidade.cep;
+        bairro.textContent = unidade.bairro;
+        estado.textContent = unidade.estado;
         esconderCarregando()
     } catch (error) {
         document.querySelector('.modal').style.visibility = 'hidden';

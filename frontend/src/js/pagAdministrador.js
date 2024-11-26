@@ -132,7 +132,7 @@ async function getAdministradoresPaginado(inicio, fim) {
     }
 }
 
-async function visualizarMembro(id) {
+async function visualizarAdministrador(id) {
     verificarSessao()
     mostrarCarregando()
     document.querySelector('.modal').style.visibility = 'visible';
@@ -147,19 +147,19 @@ async function visualizarMembro(id) {
     try {
         const token = sessionStorage.getItem("access_token");
         const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
-        const response = await axios.get(`https://backend-icb-membership.vercel.app/membro/${id}`, {
+        const response = await axios.get(`https://backend-icb-membership.vercel.app/administrador/${id}`, {
             headers: {
                 'Authorization': `Bearer ${formattedToken}`,
             },
         });
 
-        const membro = response.data.data;
-        nome.textContent = membro.nome;
-        email.textContent = membro.email;
-        sexo.textContent = membro.sexo;
-        posicao.textContent = membro.posicao;
-        telefone.textContent = membro.telefone;
-        unidade.textContent = membro.unidade.nome;
+        const admin = response.data.data;
+        nome.textContent = admin.nome;
+        email.textContent = admin.email;
+        sexo.textContent = admin.sexo;
+        posicao.textContent = admin.posicao;
+        telefone.textContent = admin.telefone;
+        unidade.textContent = admin.unidade.nome;
         esconderCarregando()
     } catch (error) {
         document.querySelector('.modal').style.visibility = 'hidden';
