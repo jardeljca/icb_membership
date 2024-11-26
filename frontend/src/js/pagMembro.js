@@ -122,3 +122,11 @@ async function getMembrosPaginado(inicio, fim) {
         console.error('Erro ao tentar acessar a lista de usuários paginados', error)
     }
 }
+
+function mostrarCarregando() {
+    document.querySelector('.carregando').style.visibility = 'visible';
+}
+
+function esconderCarregando() {
+    document.querySelector('.carregando').style.visibility = 'hidden';
+}

@@ -147,3 +147,11 @@ async function CadastrarMembroPublico() {
         console.log(error)
     }
 }
+
+function mostrarCarregando() {
+    document.querySelector('.carregando').style.visibility = 'visible';
+}
+
+function esconderCarregando() {
+    document.querySelector('.carregando').style.visibility = 'hidden';
+}

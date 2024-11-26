@@ -106,3 +106,11 @@ async function CadastrarAdministrador() {
         console.log(error.response.data.detail)
     }
 }
+
+function mostrarCarregando() {
+    document.querySelector('.carregando').style.visibility = 'visible';
+}
+
+function esconderCarregando() {
+    document.querySelector('.carregando').style.visibility = 'hidden';
+}

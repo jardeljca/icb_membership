@@ -86,69 +86,10 @@ async function CadastrarIgreja() {
 }
 
 
-/* Função para salvar novo membro */
-/*
-class Membro {
-    constructor(nome, dataNascimento, estadoCivil, contato, escolaridade, instagram, endereco, dadosEclesiasticos) {
-        this.nome = nome;
-        this.dataNascimento = dataNascimento;
-        this.estadoCivil = estadoCivil;
-        this.contato = contato;
-        this.escolaridade = escolaridade;
-        this.instagram = instagram;
-        this.endereco = endereco;
-        this.dadosEclesiasticos = dadosEclesiasticos;
-    }
+function mostrarCarregando() {
+    document.querySelector('.carregando').style.visibility = 'visible';
 }
-const membrosArray = [];
 
-function salvarMembro(event) {
-    event.preventDefault();
-
-    // Captura os valores do formulário através dos IDs
-    const nome = document.getElementById("nome").value;
-    const dataNascimento = document.getElementById("dataNascimento").value;
-    const estadoCivil = document.getElementById("estadoCivil").value;
-    const contato = document.getElementById("contato").value;
-    const escolaridade = document.getElementById("escolaridade").value;
-    const instagram = document.getElementById("instagram").value;
-
-    const cep = document.getElementById("cep").value;
-    const logradouro = document.getElementById("logradouro").value;
-    const numero = document.getElementById("numero").value;
-    const bairro = document.getElementById("bairro").value;
-    const cidade = document.getElementById("cidade").value;
-    const estado = document.getElementById("estado").value;
-
-    const dataConversao = document.getElementById("dataConversao").value;
-
-    const batismoRadio = document.querySelector('input[name="batismo"]:checked');
-    const batismo = batismoRadio && batismoRadio.value === "sim" ? {
-        batizado: true,
-        data: document.getElementById("dataBatismo").value
-    } : { batizado: false };
-
-    const cargoRadio = document.querySelector('input[name="cargo"]:checked');
-    const cargo = cargoRadio && cargoRadio.value === "sim" ?
-        document.getElementById("tipoCargo").value : null;
-
-    // Cria o objeto endereço e dados eclesiásticos
-    const endereco = { cep, logradouro, numero, bairro, cidade, estado };
-    const dadosEclesiasticos = { dataConversao, batismo, cargo };
-
-    // Cria o objeto Membro
-    const membro = new Membro(nome, dataNascimento, estadoCivil, contato, escolaridade, instagram, endereco, dadosEclesiasticos);
-
-    // Adiciona o membro ao array
-    membrosArray.push(membro);
-
-    // Exibe uma mensagem de sucesso
-    listaTabela();
-    alert("Membro salvo com sucesso!");
-    document.getElementById("formCadastro").reset();
-    esconderData();
-    esconderAreaTexto();
-    console.log(membrosArray);
-
-}*/
-// export { membrosArray };
+function esconderCarregando() {
+    document.querySelector('.carregando').style.visibility = 'hidden';
+}

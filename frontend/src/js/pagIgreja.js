@@ -122,3 +122,11 @@ async function getUnidadesPaginado(inicio, fim) {
         console.error('Erro ao tentar acessar a lista de unidades paginados', error)
     }
 }
+
+function mostrarCarregando() {
+    document.querySelector('.carregando').style.visibility = 'visible';
+}
+
+function esconderCarregando() {
+    document.querySelector('.carregando').style.visibility = 'hidden';
+}
