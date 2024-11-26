@@ -154,11 +154,11 @@ async function visualizarAdministrador(id) {
         });
 
         const admin = response.data.data;
-        nome.textContent = admin.nome;
-        email.textContent = admin.email;
-        sexo.textContent = admin.sexo;
-        posicao.textContent = admin.posicao;
-        telefone.textContent = admin.telefone;
+        nome.textContent = admin.membro.nome;
+        email.textContent = admin.membro.email;
+        sexo.textContent = admin.membro.sexo;
+        posicao.textContent = admin.membro.posicao;
+        telefone.textContent = admin.membro.telefone;
         unidade.textContent = admin.unidade.nome;
         esconderCarregando()
     } catch (error) {
