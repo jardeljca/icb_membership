@@ -132,7 +132,7 @@ async function CadastrarMembroPublico() {
         const posicao = "Membro"
 
         const response = await axios.post(
-            'https://backend-icb-membership.vercel.app/membro/',
+            'https://backend-icb-membership.vercel.app/membro_formulario/',
             {
                 "nome": nome,
                 "email": email,
@@ -150,11 +150,6 @@ async function CadastrarMembroPublico() {
                 "numero": numero,
                 "profissao": profissao,
                 "batismo": batismo
-            },
-            {
-                headers: {
-                    'Authorization': `Bearer ${formattedToken}`,
-                },
             }
         );
         if (response.data.detail['id']) {
