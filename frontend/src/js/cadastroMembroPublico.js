@@ -35,7 +35,7 @@ function buscaCep(cep) {
             })
             .catch(error => {
                 console.log("Erro:", error);
-                alert("Erro ao buscar o CEP. Tente novamente mais tarde.");
+                alert("Erro ao buscar o CEP. Digite somente números");
             });
     }
     else {
