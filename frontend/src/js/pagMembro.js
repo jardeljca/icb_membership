@@ -25,6 +25,7 @@ function logout() {
 }
 
 async function deletarMembro(id) {
+    mostrarCarregando()
     try {
         const token = sessionStorage.getItem("access_token");
         const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
@@ -35,11 +36,13 @@ async function deletarMembro(id) {
         });
         if (response.data) {
             alert("Membro deletado com sucesso")
+            esconderCarregando()
             location.reload()
         }
     } catch (error){
         alert("Erro na exclusão do Membro")
         console.error(error.response.data);
+        esconderCarregando()
         location.reload()
     }
     
@@ -85,6 +88,7 @@ async function gerarPaginacao() {
 async function getMembrosPaginado(inicio, fim) {
     try {
         verificarSessao()
+        mostrarCarregando()
         const token = sessionStorage.getItem("access_token");
         const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
         const response = await axios.get(`https://backend-icb-membership.vercel.app/membros/filtro?inicio=${inicio}&fim=${fim}`, {
@@ -117,9 +121,11 @@ async function getMembrosPaginado(inicio, fim) {
                 </td>
             `
             tableMembros.appendChild(row)
-        });
+        })
+        esconderCarregando();
     } catch (error) {
         console.error('Erro ao tentar acessar a lista de usuários paginados', error)
+        esconderCarregando()
     }
 }
 
