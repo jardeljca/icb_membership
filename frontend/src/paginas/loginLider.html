@@ -22,6 +22,11 @@
     </header>
     <hr>
     <main>
+        <div class="carregando">
+            <div class="spinner">
+                <img src="/frontend/public/imagens/loading-7528_256.gif" alt="Carregando">
+            </div>
+        </div>
         <div class="login-wrap">
             <h2>Login líder</h2>
 
@@ -29,7 +34,7 @@
                 <div class="form">
                     <input type="email" placeholder="Email" name="email" id="emailLogin"/>
                     <input type="password" placeholder="Senha" name="password" id="senhaLogin"/>
-                    <button type="submit" onclick="logar();" > Entrar </button>
+                    <button type="submit" onclick="logar(); mostrarCarregando()" > Entrar </button>
                     <a href="">Esqueci a senha</a>
                 </div>
             </form>
