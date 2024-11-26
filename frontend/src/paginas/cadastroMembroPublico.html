@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/src/styles/stylesCadastroMembros.css">
+    <link rel="stylesheet" href="/frontend/src/styles/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <title>Cadastro de Membros</title>
+</head>
+
+<body>
+    <header>
+        <img src="/frontend/public/imagens/icb_logo.png" alt="Logo icb">
+        <h1>Igreja casa da benção</h1>
+        <a href="/frontend/src/paginas/#">
+            <img src="/frontend/public/imagens/voltar.png" alt="Botão voltar">
+        </a>
+    </header>
+    <hr>
+    <main>
+        <form id="formCadastro">
+            <h2>Cadastro de membros</h2>
+            <fieldset class="dadosPessoais">
+                <legend>Dados pessoais</legend>
+                <label class="caixaGde">
+                    Nome
+                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" required />
+                </label>
+                <label class="caixaGde">
+                    Email
+                    <input type="text" name="email" id="email" placeholder="Digite seu email" required />
+                </label>
+                <label class="caixaPqna">
+                    Sexo
+                    <div class="sexo">
+                        <div class="radio">
+                            <input type="radio" name="sexo" value="Masculino" required>Masculino
+                            <input type="radio" name="sexo" value="Feminino" required>Feminino
+                        </div>
+                    </div>
+                </label>
+                <label class="caixaPqna">
+                    Data de nascimento
+                    <input id="dataNascimento" type="date" name="dataNascimento" required>
+                </label>
+                <label class="caixaPqna">
+                    Qual a sua igreja?
+                    <select id="igreja" name="igreja" required>
+                        <option value="" disabled selected>Selecione uma igreja</option>
+                    </select>
+                </label>
+                <label class="caixaPqna">
+                    Estado civil
+                    <select id="estadoCivil" name="estadoCivil" required>
+                        <option></option>
+                        <option value="Solteiro">Solteiro</option>
+                        <option value="Casado">Casado</option>
+                        <option value="Divorciado">Divorciado</option>
+                        <option value="Viúvo">Viúvo</option>
+                    </select>
+                </label>
+                <label class="caixaPqna">
+                    Profissão
+                    <input type="text" id="profissao" name="profissao">
+                </label>
+                <label class="caixaPqna">
+                    Contato
+                    <input type="text" id="contato" name="contato" placeholder="(xx)xxxxx-xxxx" maxlength="11"
+                        onkeyup="formatarTelefone(this)" required>
+                </label>
+                <label class="caixaPqna">
+                    cep
+                    <input type="text" id="cep" name="cep" placeholder="Apenas números" maxlength="8" required onblur="buscaCep(this.value)" />
+                </label>
+                <label class="caixaGde">
+                    Logradouro
+                    <input type="text" id="logradouro" name="Logradouro" placeholder="Endereço">
+                </label>
+                <label class="caixaPqna">
+                    Número
+                    <input type="number" id="numero" name="numero" placeholder="Casa">
+                </label>
+                <label class="caixaPqna">
+                    Bairro
+                    <input type="text" id="bairro" name="bairro">
+                </label>
+                <label class="caixaPqna">
+                    Estado
+                    <select id="estado" name="estado">
+                        <option disabled selected>Selecione o estado</option>
+                        <option value="Acre">Acre</option>
+                        <option value="Alagoas">Alagoas</option>
+                        <option value="Amapá">Amapá</option>
+                        <option value="Amazonas">Amazonas</option>
+                        <option value="Bahia">Bahia</option>
+                        <option value="Ceará">Ceará</option>
+                        <option value="Distrito Federal">Distrito Federal</option>
+                        <option value="Espírito Santo">Espírito Santo</option>
+                        <option value="Goiás">Goiás</option>
+                        <option value="Maranhão">Maranhão</option>
+                        <option value="Mato Grosso">Mato Grosso</option>
+                        <option value="ato Grosso do Sul">Mato Grosso do Sul</option>
+                        <option value="Minas Gerais">Minas Gerais</option>
+                        <option value="Pará">Pará</option>
+                        <option value="Paraíba">Paraíba</option>
+                        <option value="Paraná">Paraná</option>
+                        <option value="Pernambuco">Pernambuco</option>
+                        <option value="Piauí">Piauí</option>
+                        <option value="Rio de Janeiro">Rio de Janeiro</option>
+                        <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                        <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                        <option value="Rondônia">Rondônia</option>
+                        <option value="Roraima">Roraima</option>
+                        <option value="Santa Catarina">Santa Catarina</option>
+                        <option value="São Paulo">São Paulo</option>
+                        <option value="Sergipe">Sergipe</option>
+                        <option value="Tocantins">Tocantins</option>
+                    </select>
+                </label>
+                <label class="caixaPqna">
+                    Cidade
+                    <input type="text" id="cidade" name="cidade">
+                </label>
+            </fieldset>
+            <fieldset class="dadosEclesiarticos">
+                <legend>Dados Eclesiásticos</legend>
+
+                <label class="caixaPqna">
+                    Batismo nas águas?
+                    <div class="batismoAguas">
+                        <div class="radio">
+                            <input type="radio" name="batismo" value="sim" required>Sim
+                            <input type="radio" name="batismo" value="nao" required>Não
+                        </div>
+                        <div id="campoData">
+                            <input type="date" name="dataBatismo" id="dataBatismo" class="dataBatismo"
+                                placeholder="Data do batismo">
+                        </div>
+                    </div>
+                </label>
+                <!--
+                <label class="caixaPqna">
+                    Possui cargos?
+                    <div class="cargoIgreja">
+                        <div class="radio">
+                            <input type="radio" name="cargo" value="sim" required onclick="mostrarAreaTexto()">Sim
+                            <input type="radio" name="cargo" value="nao" required onclick="esconderAreaTexto()">Não
+                        </div>
+                        <div id="campoCargo">
+                            <input type="text" name="tipoCargo" id="tipoCargo" class="tipoCargo"
+                                placeholder="Qual cargo?">
+                        </div>
+                    </div>
+                </label> -->
+            </fieldset>
+            <button type="submit" class="botaoEnviar" onclick="CadastrarMembroPublico();">Enviar</button>
+        </form>
+    </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/frontend/src/js/cadastroMembroPublico.js"></script>
+<script>
+    formCadastro.addEventListener('submit', (e) => {
+        e.preventDefault()
+    })
+</script>
+
+</html>
