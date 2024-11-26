@@ -1,0 +1,67 @@
+/* Modal - Estilos principais */
+.modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    z-index: 1; /* Fica acima de outros conteúdos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo escuro com transparência */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    max-width: 600px;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+#customersModal {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#customersModal td,
+#customersModal th {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#customersModal tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customersModal tr:hover {
+    background-color: #ddd;
+}
+
+button.visualizar-btn {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.visualizar-btn:hover {
+    background-color: #45a049;
+}
