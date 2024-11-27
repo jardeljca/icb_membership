@@ -146,7 +146,7 @@ async function visualizarUnidade(id) {
     try {
         const token = sessionStorage.getItem("access_token");
         const formattedToken = token ? token.replace(/^"+|"+$/g, '') : null;
-        const response = await axios.get(`https://backend-icb-membership.vercel.app/igreja/${id}`, {
+        const response = await axios.get(`https://backend-icb-membership.vercel.app/unidade/${id}`, {
             headers: {
                 'Authorization': `Bearer ${formattedToken}`,
             },
