@@ -161,6 +161,7 @@ async function visualizarMembro(id) {
     } catch (error) {
         document.querySelector('.modal').style.visibility = 'hidden';
         console.error('Erro ao buscar dados:', error);
+        esconderCarregando()
     }
 };
 
