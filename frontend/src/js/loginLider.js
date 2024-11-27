@@ -9,7 +9,7 @@ async function logar() {
     return;
   }
 
-  async function logar()() {
+  async function logar() {
 
 
     try {
