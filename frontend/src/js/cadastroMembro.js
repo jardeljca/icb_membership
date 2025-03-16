@@ -26,7 +26,7 @@ function formatarTelefone(input) {
 window.onload = gerarListaIgrejas()
 
 /* Função com API para buscar endereço de acordo com CEP (TEMPORARIAMENTE DESABILITADA) */
-/* function buscaCep(cep) {
+function buscaCep(cep) {
     if (cep.length === 8) {
         fetch('https://viacep.com.br/ws/' + cep + '/json/')
             .then(response => {
@@ -54,7 +54,7 @@ window.onload = gerarListaIgrejas()
     else {
         alert("O cep precisa ter 8 digitos")
     }
-} */
+}
 
 /* Funções para mostrar ou esconder campo input data de batismo de acordo com a seleção da caixa */
 
